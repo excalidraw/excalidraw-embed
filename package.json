@@ -1,4 +1,12 @@
 {
+  "name": "excalidraw",
+  "version": "0.0.0",
+  "main": "dist/excalidraw.min.js",
+  "files": [
+    "dist/excalidraw.min.js",
+    "dist/excalidraw.min.css",
+    "dist/socketIoClient.min.js"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -18,46 +26,63 @@
       "last 1 safari version"
     ]
   },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
   "dependencies": {
+    "browser-nativefs": "0.8.2",
+    "i18next-browser-languagedetector": "4.3.0",
+    "lodash.throttle": "4.1.1",
+    "nanoid": "2.1.11",
+    "open-color": "1.7.0",
+    "points-on-curve": "0.2.0",
+    "pwacompat": "2.0.15",
+    "roughjs": "4.3.1",
+    "socket.io-client": "2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@babel/plugin-transform-arrow-functions": "7.8.3",
+    "@babel/plugin-transform-async-to-generator": "7.8.3",
+    "@babel/plugin-transform-typescript": "7.9.4",
+    "@babel/preset-env": "7.9.5",
+    "@babel/preset-react": "7.9.4",
+    "@babel/preset-typescript": "7.9.0",
     "@sentry/browser": "5.17.0",
     "@sentry/integrations": "5.17.0",
     "@testing-library/jest-dom": "5.10.1",
     "@testing-library/react": "10.2.1",
     "@types/jest": "26.0.0",
+    "@types/lodash.throttle": "4.1.6",
     "@types/nanoid": "2.1.0",
     "@types/react": "16.9.36",
     "@types/react-dom": "16.9.8",
     "@types/socket.io-client": "1.4.33",
-    "browser-nativefs": "0.8.2",
-    "i18next-browser-languagedetector": "4.3.0",
-    "lodash.throttle": "4.1.1",
-    "nanoid": "2.1.11",
-    "node-sass": "4.14.1",
-    "open-color": "1.7.0",
-    "points-on-curve": "0.2.0",
-    "pwacompat": "2.0.15",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-scripts": "3.4.1",
-    "roughjs": "4.3.1",
-    "socket.io-client": "2.3.0",
-    "typescript": "3.9.5"
-  },
-  "devDependencies": {
-    "@types/lodash.throttle": "4.1.6",
     "asar": "3.0.3",
+    "babel-loader": "8.1.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "css-loader": "3.5.2",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "husky": "4.2.5",
     "jest-canvas-mock": "2.2.0",
     "lint-staged": "10.2.10",
+    "mini-css-extract-plugin": "0.8.0",
+    "node-sass": "4.14.1",
     "pepjs": "0.5.2",
     "prettier": "2.0.5",
-    "rewire": "5.0.0"
-  },
-  "engines": {
-    "node": ">=12.0.0"
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-scripts": "3.4.1",
+    "rewire": "5.0.0",
+    "sass-loader": "8.0.2",
+    "terser-webpack-plugin": "2.3.5",
+    "ts-loader": "7.0.0",
+    "typescript": "3.9.5",
+    "webpack": "4.42.0",
+    "webpack-cli": "3.3.11"
   },
   "homepage": ".",
   "husky": {
@@ -70,12 +95,10 @@
       "node_modules/(?!(roughjs|points-on-curve|path-data-parser|points-on-path|browser-nativefs)/)"
     ]
   },
-  "private": true,
   "scripts": {
     "build": "npm run build:app && npm run build:zip",
     "build-node": "node ./scripts/build-node.js",
-    "build:app": "REACT_APP_INCLUDE_GTAG=true REACT_APP_GIT_SHA=$NOW_GITHUB_COMMIT_SHA react-scripts build",
-    "build:app:docker": "REACT_APP_INCLUDE_GTAG=false REACT_APP_DISABLE_SENTRY=true react-scripts build",
+    "build:app": "REACT_APP_GIT_SHA=$NOW_GITHUB_COMMIT_SHA react-scripts build",
     "build:zip": "node ./scripts/build-version.js",
     "eject": "react-scripts eject",
     "fix": "npm run fix:other && npm run fix:code",
@@ -90,6 +113,7 @@
     "test:code": "eslint --max-warnings=0 --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
     "test:other": "npm run prettier -- --list-different",
-    "test:typecheck": "tsc"
+    "test:typecheck": "tsc",
+    "build:umd": "NODE_ENV=production webpack --config webpack.prod.config.js"
   }
 }
