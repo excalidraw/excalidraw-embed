@@ -4,9 +4,13 @@ import App from "./components/App";
 
 import "./css/styles.scss";
 
-type Props = {};
+type Props = {
+  width?: number;
+  height?: number;
+};
 
 const Excalidraw = (props: Props) => {
+  const { width, height } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
       // @ts-ignore
@@ -23,6 +27,6 @@ const Excalidraw = (props: Props) => {
     };
   }, []);
 
-  return <App />;
+  return <App width={width} height={height} />;
 };
 export default Excalidraw;
