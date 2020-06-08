@@ -171,6 +171,11 @@ const gesture: Gesture = {
   initialScale: null,
 };
 
+type Props = {
+  width?: number;
+  height?: number;
+};
+
 class App extends React.Component<any, AppState> {
   canvas: HTMLCanvasElement | null = null;
   rc: RoughCanvas | null = null;
@@ -185,9 +190,24 @@ class App extends React.Component<any, AppState> {
     ...getDefaultAppState(),
     isLoading: true,
   };
+  private excalidrawRef: any;
+  private parentDOMLeft: number;
+  private parentDOMTop: number;
 
-  constructor(props: any) {
+  constructor(props: Props) {
     super(props);
+
+    const defaultAppState = getDefaultAppState();
+    const {
+      width = defaultAppState.width,
+      height = defaultAppState.height,
+    } = props;
+    this.state = {
+      ...defaultAppState,
+      width,
+      height,
+    };
+
     this.actionManager = new ActionManager(
       this.syncActionResult,
       () => this.state,
@@ -197,20 +217,30 @@ class App extends React.Component<any, AppState> {
 
     this.actionManager.registerAction(createUndoAction(history));
     this.actionManager.registerAction(createRedoAction(history));
+
+    this.excalidrawRef = React.createRef();
+    this.parentDOMLeft = this.parentDOMTop = 0;
   }
 
   public render() {
     const { zenModeEnabled } = this.state;
-    const canvasDOMWidth = window.innerWidth;
-    const canvasDOMHeight = window.innerHeight;
-
+    const { width: canvasDOMWidth, height: canvasDOMHeight } = this.state;
     const canvasScale = window.devicePixelRatio;
 
     const canvasWidth = canvasDOMWidth * canvasScale;
     const canvasHeight = canvasDOMHeight * canvasScale;
 
     return (
-      <div className="container">
+      <div
+        className="container"
+        ref={this.excalidrawRef}
+        style={{
+          width: canvasDOMWidth,
+          height: canvasDOMHeight,
+          top: this.parentDOMTop,
+          left: this.parentDOMLeft,
+        }}
+      >
         <LayerUI
           canvas={this.canvas}
           appState={this.state}
@@ -288,6 +318,8 @@ class App extends React.Component<any, AppState> {
             editingElement || res.appState?.editingElement || null,
           isCollaborating: state.isCollaborating,
           collaborators: state.collaborators,
+          height: state.height,
+          width: state.width,
         }),
         () => {
           if (res.syncHistory) {
@@ -393,6 +425,7 @@ class App extends React.Component<any, AppState> {
 
     this.addEventListeners();
     this.initializeScene();
+    this.calculateCanvasDimensions();
   }
 
   public componentWillUnmount() {
@@ -498,7 +531,16 @@ class App extends React.Component<any, AppState> {
     this.broadcastScene(SCENE.UPDATE, /* syncAll */ true);
   }, SYNC_FULL_SCENE_INTERVAL_MS);
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps: Props) {
+    const { width: prevWidth, height: prevHeight } = prevProps;
+    const { width: currentWidth, height: currentHeight } = this.props;
+    if (prevWidth !== currentWidth || prevHeight !== currentHeight) {
+      this.setState({
+        width: currentWidth,
+        height: currentHeight,
+      });
+      this.calculateCanvasDimensions();
+    }
     if (this.state.isCollaborating && !this.portal.socket) {
       this.initializeSocketClient({ showLoadingState: true });
     }
@@ -738,6 +780,7 @@ class App extends React.Component<any, AppState> {
       this.state,
       this.canvas,
       window.devicePixelRatio,
+      { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
     );
 
     const dx = x - elementsCenterX;
@@ -746,8 +789,8 @@ class App extends React.Component<any, AppState> {
 
     const newElements = clipboardElements.map((element) =>
       duplicateElement(this.state.editingGroupId, groupIdMap, element, {
-        x: element.x + dx - minX,
-        y: element.y + dy - minY,
+        x: element.x + dx - minX + this.parentDOMLeft,
+        y: element.y + dy - minY + this.parentDOMTop,
       }),
     );
 
@@ -770,6 +813,7 @@ class App extends React.Component<any, AppState> {
       this.state,
       this.canvas,
       window.devicePixelRatio,
+      { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
     );
 
     const element = newTextElement({
@@ -1129,8 +1173,8 @@ class App extends React.Component<any, AppState> {
 
   private updateCurrentCursorPosition = withBatchedUpdates(
     (event: MouseEvent) => {
-      cursorX = event.x;
-      cursorY = event.y;
+      cursorX = event.x - this.parentDOMLeft;
+      cursorY = event.y - this.parentDOMTop;
     },
   );
 
@@ -1562,6 +1606,7 @@ class App extends React.Component<any, AppState> {
       this.state,
       this.canvas,
       window.devicePixelRatio,
+      { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
     );
 
     const selectedGroupIds = getSelectedGroupIds(this.state);
@@ -1656,11 +1701,15 @@ class App extends React.Component<any, AppState> {
       }
     }
 
-    const { x: scenePointerX, y: scenePointerY } = viewportCoordsToSceneCoords(
+    const {
+      x: scenePointerX,
+      y: scenePointerY,
+    } = viewportCoordsToSceneCoords(
       event,
       this.state,
       this.canvas,
       window.devicePixelRatio,
+      { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
     );
 
     if (
@@ -1958,6 +2007,7 @@ class App extends React.Component<any, AppState> {
       this.state,
       this.canvas,
       window.devicePixelRatio,
+      { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
     );
     let lastX = x;
     let lastY = y;
@@ -2201,6 +2251,7 @@ class App extends React.Component<any, AppState> {
         this.state,
         this.canvas,
         window.devicePixelRatio,
+        { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
       );
 
       this.startTextEditing({
@@ -2362,6 +2413,7 @@ class App extends React.Component<any, AppState> {
         this.state,
         this.canvas,
         window.devicePixelRatio,
+        { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
       );
 
       // for arrows/lines, don't start dragging until a given threshold
@@ -2433,6 +2485,7 @@ class App extends React.Component<any, AppState> {
             this.state,
             this.canvas,
             window.devicePixelRatio,
+            { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
           );
 
           selectedElements.forEach((element) => {
@@ -2635,6 +2688,7 @@ class App extends React.Component<any, AppState> {
             this.state,
             this.canvas,
             window.devicePixelRatio,
+            { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
           );
           mutateElement(draggingElement, {
             points: [
@@ -2834,6 +2888,7 @@ class App extends React.Component<any, AppState> {
       this.state,
       this.canvas,
       window.devicePixelRatio,
+      { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
     );
 
     const elements = globalSceneState.getElements();
@@ -2968,9 +3023,13 @@ class App extends React.Component<any, AppState> {
     );
     if (elementClickedInside) {
       const elementCenterX =
-        elementClickedInside.x + elementClickedInside.width / 2;
+        elementClickedInside.x +
+        elementClickedInside.width / 2 +
+        this.parentDOMLeft;
       const elementCenterY =
-        elementClickedInside.y + elementClickedInside.height / 2;
+        elementClickedInside.y +
+        elementClickedInside.height / 2 +
+        this.parentDOMTop;
       const distanceToCenter = Math.hypot(
         x - elementCenterX,
         y - elementCenterY,
@@ -2998,6 +3057,7 @@ class App extends React.Component<any, AppState> {
       this.state,
       this.canvas,
       window.devicePixelRatio,
+      { deltaX: this.parentDOMLeft, deltaY: this.parentDOMTop },
     );
 
     if (isNaN(pointerCoords.x) || isNaN(pointerCoords.y)) {
@@ -3023,6 +3083,17 @@ class App extends React.Component<any, AppState> {
       this.state,
     );
   }, 300);
+
+  private calculateCanvasDimensions() {
+    let parentElement = this.excalidrawRef.current.parentElement;
+    // for shadow host in upstream App
+    if (this.excalidrawRef.current.parentNode.host) {
+      parentElement = this.excalidrawRef.current.parentNode.host;
+    }
+    const { left, top } = parentElement.getBoundingClientRect();
+    this.parentDOMLeft = left;
+    this.parentDOMTop = top;
+  }
 }
 
 // -----------------------------------------------------------------------------

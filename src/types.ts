@@ -73,6 +73,8 @@ export type AppState = {
   shouldCacheIgnoreZoom: boolean;
   showShortcutsDialog: boolean;
   zenModeEnabled: boolean;
+  width: number;
+  height: number;
 
   /** top-most selected groups (i.e. does not include nested groups) */
   selectedGroupIds: { [groupId: string]: boolean };

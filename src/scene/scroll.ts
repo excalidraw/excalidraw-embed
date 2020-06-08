@@ -47,6 +47,13 @@ export const calculateScrollCenter = (
   }
   const scale = window.devicePixelRatio;
   let [x1, y1, x2, y2] = getCommonBounds(elements);
+  const parentBoundingRect = document
+    .querySelector(".excalidraw")
+    ?.parentElement?.getBoundingClientRect();
+  const parentWidth = parentBoundingRect?.width || window.innerWidth;
+  const parentHeight = parentBoundingRect?.height || window.innerHeight;
+  const deltaX = parentBoundingRect?.left || 0;
+  const deltaY = parentBoundingRect?.top || 0;
   if (isOutsideViewPort(appState, canvas, [x1, y1, x2, y2])) {
     [x1, y1, x2, y2] = getClosestElementBounds(
       elements,
@@ -55,6 +62,7 @@ export const calculateScrollCenter = (
         appState,
         canvas,
         scale,
+        { deltaX, deltaY },
       ),
     );
   }
@@ -63,7 +71,7 @@ export const calculateScrollCenter = (
   const centerY = (y1 + y2) / 2;
 
   return {
-    scrollX: normalizeScroll(window.innerWidth / 2 - centerX),
-    scrollY: normalizeScroll(window.innerHeight / 2 - centerY),
+    scrollX: normalizeScroll(parentWidth / 2 - centerX),
+    scrollY: normalizeScroll(parentHeight / 2 - centerY),
   };
 };
