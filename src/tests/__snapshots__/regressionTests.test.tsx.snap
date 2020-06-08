@@ -24,6 +24,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -55,6 +56,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -395,7 +397,7 @@ Object {
 
 exports[`regression tests adjusts z order when grouping: [end of test] number of elements 1`] = `3`;
 
-exports[`regression tests adjusts z order when grouping: [end of test] number of renders 1`] = `19`;
+exports[`regression tests adjusts z order when grouping: [end of test] number of renders 1`] = `18`;
 
 exports[`regression tests alt-drag duplicates an element: [end of test] appState 1`] = `
 Object {
@@ -421,6 +423,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -447,6 +450,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -601,7 +605,7 @@ Object {
 
 exports[`regression tests alt-drag duplicates an element: [end of test] number of elements 1`] = `2`;
 
-exports[`regression tests alt-drag duplicates an element: [end of test] number of renders 1`] = `9`;
+exports[`regression tests alt-drag duplicates an element: [end of test] number of renders 1`] = `8`;
 
 exports[`regression tests arrow keys: [end of test] appState 1`] = `
 Object {
@@ -627,6 +631,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -650,6 +655,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -724,7 +730,7 @@ Object {
 
 exports[`regression tests arrow keys: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests arrow keys: [end of test] number of renders 1`] = `12`;
+exports[`regression tests arrow keys: [end of test] number of renders 1`] = `11`;
 
 exports[`regression tests change the properties of a shape: [end of test] appState 1`] = `
 Object {
@@ -750,6 +756,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -773,6 +780,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -983,7 +991,7 @@ Object {
 
 exports[`regression tests change the properties of a shape: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests change the properties of a shape: [end of test] number of renders 1`] = `10`;
+exports[`regression tests change the properties of a shape: [end of test] number of renders 1`] = `9`;
 
 exports[`regression tests click on an element and drag it: [dragged] appState 1`] = `
 Object {
@@ -1009,6 +1017,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -1035,6 +1044,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -1144,7 +1154,7 @@ Object {
 
 exports[`regression tests click on an element and drag it: [dragged] number of elements 1`] = `1`;
 
-exports[`regression tests click on an element and drag it: [dragged] number of renders 1`] = `9`;
+exports[`regression tests click on an element and drag it: [dragged] number of renders 1`] = `8`;
 
 exports[`regression tests click on an element and drag it: [end of test] appState 1`] = `
 Object {
@@ -1170,6 +1180,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -1198,6 +1209,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -1343,7 +1355,7 @@ Object {
 
 exports[`regression tests click on an element and drag it: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests click on an element and drag it: [end of test] number of renders 1`] = `12`;
+exports[`regression tests click on an element and drag it: [end of test] number of renders 1`] = `11`;
 
 exports[`regression tests click to select a shape: [end of test] appState 1`] = `
 Object {
@@ -1369,6 +1381,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -1395,6 +1408,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -1548,7 +1562,7 @@ Object {
 
 exports[`regression tests click to select a shape: [end of test] number of elements 1`] = `2`;
 
-exports[`regression tests click to select a shape: [end of test] number of renders 1`] = `12`;
+exports[`regression tests click to select a shape: [end of test] number of renders 1`] = `11`;
 
 exports[`regression tests click-drag to select a group: [end of test] appState 1`] = `
 Object {
@@ -1574,6 +1588,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -1601,6 +1616,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -1854,7 +1870,7 @@ Object {
 
 exports[`regression tests click-drag to select a group: [end of test] number of elements 1`] = `3`;
 
-exports[`regression tests click-drag to select a group: [end of test] number of renders 1`] = `18`;
+exports[`regression tests click-drag to select a group: [end of test] number of renders 1`] = `17`;
 
 exports[`regression tests double click to edit a group: [end of test] appState 1`] = `
 Object {
@@ -1880,6 +1896,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -1903,6 +1920,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -2246,7 +2264,7 @@ Object {
 
 exports[`regression tests double click to edit a group: [end of test] number of elements 1`] = `3`;
 
-exports[`regression tests double click to edit a group: [end of test] number of renders 1`] = `17`;
+exports[`regression tests double click to edit a group: [end of test] number of renders 1`] = `16`;
 
 exports[`regression tests draw every type of shape: [end of test] appState 1`] = `
 Object {
@@ -2272,6 +2290,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -2295,6 +2314,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4031,7 +4051,7 @@ Object {
 
 exports[`regression tests draw every type of shape: [end of test] number of elements 1`] = `8`;
 
-exports[`regression tests draw every type of shape: [end of test] number of renders 1`] = `46`;
+exports[`regression tests draw every type of shape: [end of test] number of renders 1`] = `45`;
 
 exports[`regression tests hotkey 2 selects rectangle tool: [end of test] appState 1`] = `
 Object {
@@ -4057,6 +4077,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -4080,6 +4101,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4154,7 +4176,7 @@ Object {
 
 exports[`regression tests hotkey 2 selects rectangle tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey 2 selects rectangle tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey 2 selects rectangle tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey 3 selects diamond tool: [end of test] appState 1`] = `
 Object {
@@ -4180,6 +4202,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -4203,6 +4226,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4277,7 +4301,7 @@ Object {
 
 exports[`regression tests hotkey 3 selects diamond tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey 3 selects diamond tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey 3 selects diamond tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey 4 selects ellipse tool: [end of test] appState 1`] = `
 Object {
@@ -4303,6 +4327,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -4326,6 +4351,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4400,7 +4426,7 @@ Object {
 
 exports[`regression tests hotkey 4 selects ellipse tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey 4 selects ellipse tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey 4 selects ellipse tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey 5 selects arrow tool: [end of test] appState 1`] = `
 Object {
@@ -4426,6 +4452,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -4449,6 +4476,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4545,7 +4573,7 @@ Object {
 
 exports[`regression tests hotkey 5 selects arrow tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey 5 selects arrow tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey 5 selects arrow tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey 6 selects line tool: [end of test] appState 1`] = `
 Object {
@@ -4571,6 +4599,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -4594,6 +4623,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4690,7 +4720,7 @@ Object {
 
 exports[`regression tests hotkey 6 selects line tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey 6 selects line tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey 6 selects line tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey 7 selects draw tool: [end of test] appState 1`] = `
 Object {
@@ -4716,6 +4746,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -4739,6 +4770,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4835,7 +4867,7 @@ Object {
 
 exports[`regression tests hotkey 7 selects draw tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey 7 selects draw tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey 7 selects draw tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey a selects arrow tool: [end of test] appState 1`] = `
 Object {
@@ -4861,6 +4893,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -4884,6 +4917,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -4980,7 +5014,7 @@ Object {
 
 exports[`regression tests hotkey a selects arrow tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey a selects arrow tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey a selects arrow tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey d selects diamond tool: [end of test] appState 1`] = `
 Object {
@@ -5006,6 +5040,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -5029,6 +5064,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -5103,7 +5139,7 @@ Object {
 
 exports[`regression tests hotkey d selects diamond tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey d selects diamond tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey d selects diamond tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey e selects ellipse tool: [end of test] appState 1`] = `
 Object {
@@ -5129,6 +5165,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -5152,6 +5189,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -5226,7 +5264,7 @@ Object {
 
 exports[`regression tests hotkey e selects ellipse tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey e selects ellipse tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey e selects ellipse tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey l selects line tool: [end of test] appState 1`] = `
 Object {
@@ -5252,6 +5290,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -5275,6 +5314,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -5371,7 +5411,7 @@ Object {
 
 exports[`regression tests hotkey l selects line tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey l selects line tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey l selects line tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey r selects rectangle tool: [end of test] appState 1`] = `
 Object {
@@ -5397,6 +5437,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -5420,6 +5461,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -5494,7 +5536,7 @@ Object {
 
 exports[`regression tests hotkey r selects rectangle tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey r selects rectangle tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey r selects rectangle tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests hotkey x selects draw tool: [end of test] appState 1`] = `
 Object {
@@ -5520,6 +5562,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -5543,6 +5586,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -5639,7 +5683,7 @@ Object {
 
 exports[`regression tests hotkey x selects draw tool: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests hotkey x selects draw tool: [end of test] number of renders 1`] = `6`;
+exports[`regression tests hotkey x selects draw tool: [end of test] number of renders 1`] = `5`;
 
 exports[`regression tests make a group and duplicate it: [end of test] appState 1`] = `
 Object {
@@ -5665,6 +5709,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -5699,6 +5744,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -6276,7 +6322,7 @@ Object {
 
 exports[`regression tests make a group and duplicate it: [end of test] number of elements 1`] = `6`;
 
-exports[`regression tests make a group and duplicate it: [end of test] number of renders 1`] = `21`;
+exports[`regression tests make a group and duplicate it: [end of test] number of renders 1`] = `20`;
 
 exports[`regression tests noop interaction after undo shouldn't create history entry: [end of test] appState 1`] = `
 Object {
@@ -6302,6 +6348,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -6329,6 +6376,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -6482,7 +6530,7 @@ Object {
 
 exports[`regression tests noop interaction after undo shouldn't create history entry: [end of test] number of elements 1`] = `2`;
 
-exports[`regression tests noop interaction after undo shouldn't create history entry: [end of test] number of renders 1`] = `18`;
+exports[`regression tests noop interaction after undo shouldn't create history entry: [end of test] number of renders 1`] = `17`;
 
 exports[`regression tests pinch-to-zoom works: [end of test] appState 1`] = `
 Object {
@@ -6508,6 +6556,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -6531,6 +6580,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -6546,7 +6596,7 @@ Object {
 
 exports[`regression tests pinch-to-zoom works: [end of test] number of elements 1`] = `0`;
 
-exports[`regression tests pinch-to-zoom works: [end of test] number of renders 1`] = `8`;
+exports[`regression tests pinch-to-zoom works: [end of test] number of renders 1`] = `7`;
 
 exports[`regression tests rerenders UI on language change: [end of test] appState 1`] = `
 Object {
@@ -6572,6 +6622,7 @@ Object {
   "elementType": "rectangle",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -6593,6 +6644,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -6608,7 +6660,7 @@ Object {
 
 exports[`regression tests rerenders UI on language change: [end of test] number of elements 1`] = `0`;
 
-exports[`regression tests rerenders UI on language change: [end of test] number of renders 1`] = `5`;
+exports[`regression tests rerenders UI on language change: [end of test] number of renders 1`] = `4`;
 
 exports[`regression tests resize an element, trying every resize handle: [end of test] appState 1`] = `
 Object {
@@ -6634,6 +6686,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -6673,6 +6726,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -7427,7 +7481,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [end of test] number of renders 1`] = `54`;
+exports[`regression tests resize an element, trying every resize handle: [end of test] number of renders 1`] = `53`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle ne (+5, +5)] appState 1`] = `
 Object {
@@ -7453,6 +7507,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -7483,6 +7538,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -7823,7 +7879,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle ne (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle ne (+5, +5)] number of renders 1`] = `27`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle ne (+5, +5)] number of renders 1`] = `26`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle ne (-5, -5)] appState 1`] = `
 Object {
@@ -7849,6 +7905,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -7877,6 +7934,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -8136,7 +8194,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle ne (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle ne (-5, -5)] number of renders 1`] = `21`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle ne (-5, -5)] number of renders 1`] = `20`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle nw (+5, +5)] appState 1`] = `
 Object {
@@ -8162,6 +8220,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -8188,6 +8247,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -8370,7 +8430,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle nw (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle nw (+5, +5)] number of renders 1`] = `15`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle nw (+5, +5)] number of renders 1`] = `14`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle nw (-5, -5)] appState 1`] = `
 Object {
@@ -8396,6 +8456,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -8420,6 +8481,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -8529,7 +8591,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle nw (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle nw (-5, -5)] number of renders 1`] = `9`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle nw (-5, -5)] number of renders 1`] = `8`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle se (+5, +5)] appState 1`] = `
 Object {
@@ -8555,6 +8617,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -8593,6 +8656,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -9297,7 +9361,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle se (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle se (+5, +5)] number of renders 1`] = `51`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle se (+5, +5)] number of renders 1`] = `50`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle se (-5, -5)] appState 1`] = `
 Object {
@@ -9323,6 +9387,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -9359,6 +9424,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -9966,7 +10032,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle se (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle se (-5, -5)] number of renders 1`] = `45`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle se (-5, -5)] number of renders 1`] = `44`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle sw (+5, +5)] appState 1`] = `
 Object {
@@ -9992,6 +10058,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -10026,6 +10093,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -10540,7 +10608,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle sw (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle sw (+5, +5)] number of renders 1`] = `39`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle sw (+5, +5)] number of renders 1`] = `38`;
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle sw (-5, -5)] appState 1`] = `
 Object {
@@ -10566,6 +10634,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -10598,6 +10667,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -11023,7 +11093,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [resize handle sw (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [resize handle sw (-5, -5)] number of renders 1`] = `33`;
+exports[`regression tests resize an element, trying every resize handle: [resize handle sw (-5, -5)] number of renders 1`] = `32`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (+5, +5)] appState 1`] = `
 Object {
@@ -11049,6 +11119,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -11080,6 +11151,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -11462,7 +11534,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (+5, +5)] number of renders 1`] = `30`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (+5, +5)] number of renders 1`] = `29`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (-5, -5)] appState 1`] = `
 Object {
@@ -11488,6 +11560,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -11517,6 +11590,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -11816,7 +11890,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (-5, -5)] number of renders 1`] = `24`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle ne (-5, -5)] number of renders 1`] = `23`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (+5, +5)] appState 1`] = `
 Object {
@@ -11842,6 +11916,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -11869,6 +11944,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -12089,7 +12165,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (+5, +5)] number of renders 1`] = `18`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (+5, +5)] number of renders 1`] = `17`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (-5, -5)] appState 1`] = `
 Object {
@@ -12115,6 +12191,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -12140,6 +12217,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -12285,7 +12363,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (-5, -5)] number of renders 1`] = `12`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle nw (-5, -5)] number of renders 1`] = `11`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle se (+5, +5)] appState 1`] = `
 Object {
@@ -12311,6 +12389,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -12350,6 +12429,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -13104,7 +13184,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle se (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle se (+5, +5)] number of renders 1`] = `54`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle se (+5, +5)] number of renders 1`] = `53`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle se (-5, -5)] appState 1`] = `
 Object {
@@ -13130,6 +13210,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -13167,6 +13248,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -13822,7 +13904,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle se (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle se (-5, -5)] number of renders 1`] = `48`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle se (-5, -5)] number of renders 1`] = `47`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (+5, +5)] appState 1`] = `
 Object {
@@ -13848,6 +13930,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -13883,6 +13966,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -14443,7 +14527,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (+5, +5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (+5, +5)] number of renders 1`] = `42`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (+5, +5)] number of renders 1`] = `41`;
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (-5, -5)] appState 1`] = `
 Object {
@@ -14469,6 +14553,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -14502,6 +14587,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -14971,7 +15057,7 @@ Object {
 
 exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (-5, -5)] number of elements 1`] = `1`;
 
-exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (-5, -5)] number of renders 1`] = `36`;
+exports[`regression tests resize an element, trying every resize handle: [unresize handle sw (-5, -5)] number of renders 1`] = `35`;
 
 exports[`regression tests shift-click to multiselect, then drag: [end of test] appState 1`] = `
 Object {
@@ -14997,6 +15083,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -15029,6 +15116,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -15241,7 +15329,7 @@ Object {
 
 exports[`regression tests shift-click to multiselect, then drag: [end of test] number of elements 1`] = `2`;
 
-exports[`regression tests shift-click to multiselect, then drag: [end of test] number of renders 1`] = `17`;
+exports[`regression tests shift-click to multiselect, then drag: [end of test] number of renders 1`] = `16`;
 
 exports[`regression tests shows context menu for canvas: [end of test] appState 1`] = `
 Object {
@@ -15267,6 +15355,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -15288,6 +15377,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -15303,7 +15393,7 @@ Object {
 
 exports[`regression tests shows context menu for canvas: [end of test] number of elements 1`] = `0`;
 
-exports[`regression tests shows context menu for canvas: [end of test] number of renders 1`] = `3`;
+exports[`regression tests shows context menu for canvas: [end of test] number of renders 1`] = `2`;
 
 exports[`regression tests shows context menu for element: [end of test] appState 1`] = `
 Object {
@@ -15329,6 +15419,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -15352,6 +15443,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -15426,7 +15518,7 @@ Object {
 
 exports[`regression tests shows context menu for element: [end of test] number of elements 1`] = `1`;
 
-exports[`regression tests shows context menu for element: [end of test] number of renders 1`] = `7`;
+exports[`regression tests shows context menu for element: [end of test] number of renders 1`] = `6`;
 
 exports[`regression tests spacebar + drag scrolls the canvas: [end of test] appState 1`] = `
 Object {
@@ -15452,6 +15544,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -15473,6 +15566,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -15488,7 +15582,7 @@ Object {
 
 exports[`regression tests spacebar + drag scrolls the canvas: [end of test] number of elements 1`] = `0`;
 
-exports[`regression tests spacebar + drag scrolls the canvas: [end of test] number of renders 1`] = `5`;
+exports[`regression tests spacebar + drag scrolls the canvas: [end of test] number of renders 1`] = `4`;
 
 exports[`regression tests supports nested groups: [end of test] appState 1`] = `
 Object {
@@ -15514,6 +15608,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -15537,6 +15632,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -16139,7 +16235,7 @@ Object {
 
 exports[`regression tests supports nested groups: [end of test] number of elements 1`] = `3`;
 
-exports[`regression tests supports nested groups: [end of test] number of renders 1`] = `30`;
+exports[`regression tests supports nested groups: [end of test] number of renders 1`] = `29`;
 
 exports[`regression tests two-finger scroll works: [end of test] appState 1`] = `
 Object {
@@ -16165,6 +16261,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -16188,6 +16285,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1.99,
 }
@@ -16203,7 +16301,7 @@ Object {
 
 exports[`regression tests two-finger scroll works: [end of test] number of elements 1`] = `0`;
 
-exports[`regression tests two-finger scroll works: [end of test] number of renders 1`] = `10`;
+exports[`regression tests two-finger scroll works: [end of test] number of renders 1`] = `9`;
 
 exports[`regression tests undo/redo drawing an element: [end of test] appState 1`] = `
 Object {
@@ -16229,6 +16327,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -16252,6 +16351,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -16628,7 +16728,7 @@ Object {
 
 exports[`regression tests undo/redo drawing an element: [end of test] number of elements 1`] = `3`;
 
-exports[`regression tests undo/redo drawing an element: [end of test] number of renders 1`] = `24`;
+exports[`regression tests undo/redo drawing an element: [end of test] number of renders 1`] = `23`;
 
 exports[`regression tests updates fontSize & fontFamily appState: [end of test] appState 1`] = `
 Object {
@@ -16654,6 +16754,7 @@ Object {
   "elementType": "text",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -16675,6 +16776,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -16701,7 +16803,7 @@ Object {
 
 exports[`regression tests updates fontSize & fontFamily appState: [end of test] number of elements 1`] = `0`;
 
-exports[`regression tests updates fontSize & fontFamily appState: [end of test] number of renders 1`] = `4`;
+exports[`regression tests updates fontSize & fontFamily appState: [end of test] number of renders 1`] = `3`;
 
 exports[`regression tests zoom hotkeys: [end of test] appState 1`] = `
 Object {
@@ -16727,6 +16829,7 @@ Object {
   "elementType": "selection",
   "errorMessage": null,
   "exportBackground": true,
+  "height": 768,
   "isCollaborating": false,
   "isLoading": false,
   "isResizing": false,
@@ -16748,6 +16851,7 @@ Object {
   "showShortcutsDialog": false,
   "username": "",
   "viewBackgroundColor": "#ffffff",
+  "width": 1024,
   "zenModeEnabled": false,
   "zoom": 1,
 }
@@ -16763,4 +16867,4 @@ Object {
 
 exports[`regression tests zoom hotkeys: [end of test] number of elements 1`] = `0`;
 
-exports[`regression tests zoom hotkeys: [end of test] number of renders 1`] = `4`;
+exports[`regression tests zoom hotkeys: [end of test] number of renders 1`] = `3`;
