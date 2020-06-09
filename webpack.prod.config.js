@@ -6,7 +6,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    "excalidraw.min": ["./src/excalidraw_wrapper.tsx"],
+    "excalidraw.min": "./src/excalidraw_wrapper.tsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
