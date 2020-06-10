@@ -6,7 +6,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    "excalidraw.min": "./src/excalidraw_wrapper.js",
+    "excalidraw.min": "./src/excalidraw_wrapper.tsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -66,7 +66,7 @@ module.exports = {
         test: /\.js($|\?)/i,
       }),
       new webpack.optimize.LimitChunkCountPlugin({
-        maxChunks: 2,
+        maxChunks: 1,
       }),
     ],
   },
