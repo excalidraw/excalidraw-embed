@@ -8,10 +8,11 @@ import "./css/styles.scss";
 type Props = {
   width?: number;
   height?: number;
+  zenModeEnabled?: boolean;
 };
 
 const Excalidraw = (props: Props) => {
-  const { width, height } = props;
+  const { width, height, zenModeEnabled } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
       // @ts-ignore
@@ -28,6 +29,6 @@ const Excalidraw = (props: Props) => {
     };
   }, []);
 
-  return <App width={width} height={height} />;
+  return <App width={width} height={height} zenModeEnabled={zenModeEnabled} />;
 };
 export default Excalidraw;

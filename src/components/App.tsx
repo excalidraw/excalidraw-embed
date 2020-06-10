@@ -170,12 +170,13 @@ const gesture: Gesture = {
   initialScale: null,
 };
 
-type Props = {
-  width?: number;
-  height?: number;
-};
+interface Props {
+  width: number;
+  height: number;
+  zenModeEnabled: boolean;
+}
 
-class App extends React.Component<any, AppState> {
+class App extends React.Component<Props, AppState> {
   canvas: HTMLCanvasElement | null = null;
   rc: RoughCanvas | null = null;
   portal: Portal = new Portal(this);
@@ -193,18 +194,22 @@ class App extends React.Component<any, AppState> {
   private parentDOMLeft: number;
   private parentDOMTop: number;
 
+  public static defaultProps: Partial<Props> = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+    zenModeEnabled: false,
+  };
+
   constructor(props: Props) {
     super(props);
 
     const defaultAppState = getDefaultAppState();
-    const {
-      width = defaultAppState.width,
-      height = defaultAppState.height,
-    } = props;
+    const { width, height, zenModeEnabled } = props;
     this.state = {
       ...defaultAppState,
       width,
       height,
+      zenModeEnabled,
     };
 
     this.actionManager = new ActionManager(
@@ -319,6 +324,7 @@ class App extends React.Component<any, AppState> {
           collaborators: state.collaborators,
           height: state.height,
           width: state.width,
+          zenModeEnabled: state.zenModeEnabled,
         }),
         () => {
           if (res.syncHistory) {
