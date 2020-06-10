@@ -113,4 +113,5 @@ export type LibraryItems = readonly NonDeleted<ExcalidrawElement>[][];
 export interface ExcalidrawProps {
   width: number;
   height: number;
+  zenModeEnabled: boolean;
 }
