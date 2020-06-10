@@ -249,6 +249,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
   public static defaultProps: Partial<ExcalidrawProps> = {
     width: window.innerWidth,
     height: window.innerHeight,
+    zenModeEnabled: false,
   };
   private scene: Scene;
 
@@ -256,12 +257,13 @@ class App extends React.Component<ExcalidrawProps, AppState> {
     super(props);
     const defaultAppState = getDefaultAppState();
 
-    const { width, height } = props;
+    const { width, height, zenModeEnabled } = props;
     this.state = {
       ...defaultAppState,
       isLoading: true,
       width,
       height,
+      zenModeEnabled,
       ...this.getCanvasOffsets(),
     };
 
@@ -389,6 +391,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
             height: state.height,
             offsetTop: state.offsetTop,
             offsetLeft: state.offsetLeft,
+            zenModeEnabled: state.zenModeEnabled,
           }),
           () => {
             if (actionResult.syncHistory) {

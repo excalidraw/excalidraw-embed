@@ -114,4 +114,5 @@ export type LibraryItems = readonly LibraryItem[];
 export interface ExcalidrawProps {
   width: number;
   height: number;
+  zenModeEnabled: boolean;
 }
