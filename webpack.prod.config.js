@@ -24,7 +24,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { url: false } },
+          { loader: "css-loader" },
           "sass-loader",
         ],
       },
@@ -53,6 +53,17 @@ module.exports = {
                 "transform-class-properties",
                 "@babel/plugin-transform-async-to-generator",
               ],
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
             },
           },
         ],
