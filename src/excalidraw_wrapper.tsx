@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import App from "./components/App";
 
+import "../public/fonts.css";
 import "../public/app.css";
 import "./css/styles.scss";
 
