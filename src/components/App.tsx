@@ -44,7 +44,6 @@ import {
 } from "../scene";
 import {
   decryptAESGEM,
-  saveToLocalStorage,
   loadScene,
   loadFromBlob,
   SOCKET_SERVER,
@@ -155,6 +154,7 @@ import {
 import { Library } from "../data/library";
 import Scene from "../scene/Scene";
 import oc from "open-color";
+import { loadLibrary } from "../data/localStorage";
 
 /**
  * @param func handler taking at most single parameter (event).
@@ -413,8 +413,10 @@ class App extends React.Component<ExcalidrawProps, AppState> {
 
   private onBlur = withBatchedUpdates(() => {
     isHoldingSpace = false;
-    this.saveDebounced();
-    this.saveDebounced.flush();
+    const { onBlur } = this.props;
+    if (onBlur) {
+      onBlur(this.scene.getElementsIncludingDeleted(), this.state);
+    }
   });
 
   private onUnload = () => {
@@ -698,7 +700,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
 
   componentDidUpdate(prevProps: ExcalidrawProps) {
     const { width: prevWidth, height: prevHeight } = prevProps;
-    const { width: currentWidth, height: currentHeight } = this.props;
+    const { width: currentWidth, height: currentHeight, onChange } = this.props;
     if (prevWidth !== currentWidth || prevHeight !== currentHeight) {
       this.setState({
         width: currentWidth,
@@ -795,7 +797,10 @@ class App extends React.Component<ExcalidrawProps, AppState> {
     if (this.state.scrolledOutside !== scrolledOutside) {
       this.setState({ scrolledOutside: scrolledOutside });
     }
-    this.saveDebounced();
+
+    if (onChange) {
+      onChange(this.scene.getElementsIncludingDeleted(), this.state);
+    }
 
     if (
       getDrawingVersion(this.scene.getElementsIncludingDeleted()) >
@@ -3469,10 +3474,6 @@ class App extends React.Component<ExcalidrawProps, AppState> {
 
   private resetShouldCacheIgnoreZoomDebounced = debounce(() => {
     this.setState({ shouldCacheIgnoreZoom: false });
-  }, 300);
-
-  private saveDebounced = debounce(() => {
-    saveToLocalStorage(this.scene.getElementsIncludingDeleted(), this.state);
   }, 300);
 
   private getCanvasOffsets() {

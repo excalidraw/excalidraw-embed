@@ -116,4 +116,6 @@ export interface ExcalidrawProps {
   height: number;
   zenModeEnabled: boolean;
   viewBackgroundColor: string;
+  onChange?: Function;
+  onBlur?: Function;
 }
