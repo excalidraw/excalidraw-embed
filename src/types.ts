@@ -115,4 +115,5 @@ export interface ExcalidrawProps {
   width: number;
   height: number;
   zenModeEnabled: boolean;
+  viewBackgroundColor: string;
 }
