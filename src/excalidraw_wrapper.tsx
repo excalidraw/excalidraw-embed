@@ -11,10 +11,19 @@ type Props = {
   height?: number;
   zenModeEnabled?: boolean;
   viewBackgroundColor?: string;
+  onChange?: Function;
+  onBlur?: Function;
 };
 
 const Excalidraw = (props: Props) => {
-  const { width, height, zenModeEnabled, viewBackgroundColor } = props;
+  const {
+    width,
+    height,
+    zenModeEnabled,
+    viewBackgroundColor,
+    onChange,
+    onBlur,
+  } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
       // @ts-ignore
@@ -37,6 +46,8 @@ const Excalidraw = (props: Props) => {
       height={height}
       zenModeEnabled={zenModeEnabled}
       viewBackgroundColor={viewBackgroundColor}
+      onChange={onChange}
+      onBlur={onBlur}
     />
   );
 };
