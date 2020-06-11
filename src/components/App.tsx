@@ -138,6 +138,7 @@ import {
   isElementInGroup,
   getSelectedGroupIdForElement,
 } from "../groups";
+import oc from "open-color";
 
 /**
  * @param func handler taking at most single parameter (event).
@@ -174,6 +175,7 @@ interface Props {
   width: number;
   height: number;
   zenModeEnabled: boolean;
+  viewBackgroundColor: string;
 }
 
 class App extends React.Component<Props, AppState> {
@@ -198,18 +200,20 @@ class App extends React.Component<Props, AppState> {
     width: window.innerWidth,
     height: window.innerHeight,
     zenModeEnabled: false,
+    viewBackgroundColor: oc.white,
   };
 
   constructor(props: Props) {
     super(props);
 
     const defaultAppState = getDefaultAppState();
-    const { width, height, zenModeEnabled } = props;
+    const { width, height, zenModeEnabled, viewBackgroundColor } = props;
     this.state = {
       ...defaultAppState,
       width,
       height,
       zenModeEnabled,
+      viewBackgroundColor,
     };
 
     this.actionManager = new ActionManager(
