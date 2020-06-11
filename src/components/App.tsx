@@ -153,6 +153,7 @@ import {
   isElementInGroup,
   getSelectedGroupIdForElement,
 } from "../groups";
+import oc from "open-color";
 
 /**
  * @param func handler taking at most single parameter (event).
@@ -250,19 +251,21 @@ class App extends React.Component<ExcalidrawProps, AppState> {
     width: window.innerWidth,
     height: window.innerHeight,
     zenModeEnabled: false,
+    viewBackgroundColor: oc.white,
   };
 
   constructor(props: ExcalidrawProps) {
     super(props);
     const defaultAppState = getDefaultAppState();
 
-    const { width, height, zenModeEnabled } = props;
+    const { width, height, zenModeEnabled, viewBackgroundColor } = props;
     this.state = {
       ...defaultAppState,
       isLoading: true,
       width,
       height,
       zenModeEnabled,
+      viewBackgroundColor,
       ...this.getCanvasOffsets(),
     };
 
