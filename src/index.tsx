@@ -11,7 +11,10 @@ import App from "./components/App";
 import { register as registerServiceWorker } from "./serviceWorker";
 
 import "./css/styles.scss";
-import { loadFromBlob } from "./data";
+import { loadFromBlob, saveToLocalStorage } from "./data";
+import { debounce } from "./utils";
+import { AppState } from "./types";
+import { ExcalidrawElement } from "./element/types";
 
 // On Apple mobile devices add the proprietary app icon and splashscreen markup.
 // No one should have to do this manually, and eventually this annoyance will
@@ -88,6 +91,15 @@ function ExcalidrawApp() {
     });
   };
 
+  const saveDebounced = debounce((elements, state) => {
+    saveToLocalStorage(elements, state);
+  }, 300);
+
+  const onBlur = (elements: readonly ExcalidrawElement[], state: AppState) => {
+    saveDebounced(elements, state);
+    saveDebounced.flush();
+  };
+
   useLayoutEffect(() => {
     window.addEventListener("resize", onResize);
 
@@ -99,7 +111,12 @@ function ExcalidrawApp() {
     <TopErrorBoundary>
       <IsMobileProvider>
         <InitializeApp>
-          <App width={width} height={height} />
+          <App
+            width={width}
+            height={height}
+            onChange={saveDebounced}
+            onBlur={onBlur}
+          />
         </InitializeApp>
       </IsMobileProvider>
     </TopErrorBoundary>
