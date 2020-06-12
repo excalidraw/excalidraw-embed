@@ -119,4 +119,8 @@ export interface ExcalidrawProps {
   onChange?: Function;
   onBlur?: Function;
   initialData: readonly ExcalidrawElement[];
+  user: {
+    name?: string | null | undefined;
+  };
+  onUsernameChange?: (username: string) => void;
 }

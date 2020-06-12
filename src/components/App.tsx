@@ -137,11 +137,6 @@ import { invalidateShapeForElement } from "../renderer/renderElement";
 import { unstable_batchedUpdates } from "react-dom";
 import { isLinearElement } from "../element/typeChecks";
 import { actionFinalize, actionDeleteSelected } from "../actions";
-import {
-  restoreUsernameFromLocalStorage,
-  saveUsernameToLocalStorage,
-  loadLibrary,
-} from "../data/localStorage";
 
 import throttle from "lodash.throttle";
 import { LinearElementEditor } from "../element/linearElementEditor";
@@ -253,6 +248,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
     zenModeEnabled: false,
     viewBackgroundColor: oc.white,
     initialData: [],
+    user: {},
   };
   private scene: Scene;
 
@@ -260,7 +256,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
     super(props);
     const defaultAppState = getDefaultAppState();
 
-    const { width, height, zenModeEnabled, viewBackgroundColor } = props;
+    const { width, height, zenModeEnabled, viewBackgroundColor, user } = props;
     this.state = {
       ...defaultAppState,
       isLoading: true,
@@ -268,6 +264,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
       height,
       zenModeEnabled,
       viewBackgroundColor,
+      username: user.name || "",
       ...this.getCanvasOffsets(),
     };
 
@@ -292,6 +289,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
       offsetTop,
       offsetLeft,
     } = this.state;
+    const { onUsernameChange } = this.props;
 
     const canvasScale = window.devicePixelRatio;
 
@@ -318,7 +316,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
           onRoomCreate={this.openPortal}
           onRoomDestroy={this.closePortal}
           onUsernameChange={(username) => {
-            saveUsernameToLocalStorage(username);
+            onUsernameChange && onUsernameChange(username);
             this.setState({
               username,
             });
@@ -1367,16 +1365,6 @@ class App extends React.Component<ExcalidrawProps, AppState> {
       cursorY = event.y;
     },
   );
-
-  restoreUserName() {
-    const username = restoreUsernameFromLocalStorage();
-
-    if (username !== null) {
-      this.setState({
-        username,
-      });
-    }
-  }
 
   // Input handling
 
