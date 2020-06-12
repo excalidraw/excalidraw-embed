@@ -1,7 +1,6 @@
 import { ExcalidrawElement } from "../element/types";
 import { AppState } from "../types";
 import { clearAppStateForLocalStorage } from "../appState";
-import { restore } from "./restore";
 
 const LOCAL_STORAGE_KEY = "excalidraw";
 const LOCAL_STORAGE_KEY_STATE = "excalidraw-state";
@@ -84,5 +83,5 @@ export const restoreFromLocalStorage = () => {
       // Do nothing because appState is already null
     }
   }
-  return restore(elements, appState);
+  return elements;
 };

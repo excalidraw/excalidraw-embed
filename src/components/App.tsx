@@ -177,6 +177,7 @@ interface Props {
   viewBackgroundColor: string;
   onChange?: Function;
   onBlur?: Function;
+  initialData: readonly ExcalidrawElement[];
 }
 
 class App extends React.Component<Props, AppState> {
@@ -202,6 +203,7 @@ class App extends React.Component<Props, AppState> {
     height: window.innerHeight,
     zenModeEnabled: false,
     viewBackgroundColor: oc.white,
+    initialData: [],
   };
 
   constructor(props: Props) {
@@ -380,15 +382,16 @@ class App extends React.Component<Props, AppState> {
 
     const isCollaborationScene = getCollaborationLinkData(window.location.href);
 
+    const { initialData } = this.props;
     if (!isCollaborationScene) {
       let scene: ResolutionType<typeof loadScene> | undefined;
       // Backwards compatibility with legacy url format
       if (id) {
-        scene = await loadScene(id);
+        scene = await loadScene(id, initialData);
       } else if (jsonMatch) {
-        scene = await loadScene(jsonMatch[1], jsonMatch[2]);
+        scene = await loadScene(jsonMatch[1], initialData, jsonMatch[2]);
       } else {
-        scene = await loadScene(null);
+        scene = await loadScene(null, initialData);
       }
       if (scene) {
         this.syncActionResult(scene);
