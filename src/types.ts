@@ -102,3 +102,18 @@ export declare class GestureEvent extends UIEvent {
 export type SocketUpdateData = SocketUpdateDataSource[keyof SocketUpdateDataSource] & {
   _brand: "socketUpdateData";
 };
+
+export interface ExcalidrawProps {
+  width: number;
+  height: number;
+  zenModeEnabled: boolean;
+  viewBackgroundColor: string;
+  onChange?: Function;
+  onBlur?: Function;
+  initialData: readonly ExcalidrawElement[];
+  user: {
+    name?: string | null | undefined;
+  };
+  onUsernameChange?: (username: string) => void;
+  onResize: () => void;
+}
