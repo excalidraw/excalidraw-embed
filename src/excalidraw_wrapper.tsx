@@ -16,6 +16,10 @@ type Props = {
   onChange?: Function;
   onBlur?: Function;
   initialData?: readonly ExcalidrawElement[];
+  user: {
+    name?: string | null | undefined;
+  };
+  onUsernameChange?: (username: string) => void;
 };
 
 const Excalidraw = (props: Props) => {
@@ -27,6 +31,8 @@ const Excalidraw = (props: Props) => {
     onChange,
     onBlur,
     initialData,
+    user,
+    onUsernameChange,
   } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
@@ -53,6 +59,8 @@ const Excalidraw = (props: Props) => {
       onChange={onChange}
       onBlur={onBlur}
       initialData={initialData}
+      user={user}
+      onUsernameChange={onUsernameChange}
     />
   );
 };

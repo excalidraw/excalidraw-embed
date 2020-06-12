@@ -124,10 +124,6 @@ import { unstable_batchedUpdates } from "react-dom";
 import { SceneStateCallbackRemover } from "../scene/globalScene";
 import { isLinearElement } from "../element/typeChecks";
 import { actionFinalize, actionDeleteSelected } from "../actions";
-import {
-  restoreUsernameFromLocalStorage,
-  saveUsernameToLocalStorage,
-} from "../data/localStorage";
 
 import throttle from "lodash.throttle";
 import { LinearElementEditor } from "../element/linearElementEditor";
@@ -178,6 +174,10 @@ interface Props {
   onChange?: Function;
   onBlur?: Function;
   initialData: readonly ExcalidrawElement[];
+  user: {
+    name?: string | null | undefined;
+  };
+  onUsernameChange?: (username: string) => void;
 }
 
 class App extends React.Component<Props, AppState> {
@@ -204,19 +204,21 @@ class App extends React.Component<Props, AppState> {
     zenModeEnabled: false,
     viewBackgroundColor: oc.white,
     initialData: [],
+    user: {},
   };
 
   constructor(props: Props) {
     super(props);
 
     const defaultAppState = getDefaultAppState();
-    const { width, height, zenModeEnabled, viewBackgroundColor } = props;
+    const { width, height, zenModeEnabled, viewBackgroundColor, user } = props;
     this.state = {
       ...defaultAppState,
       width,
       height,
       zenModeEnabled,
       viewBackgroundColor,
+      username: user.name || "",
     };
 
     this.actionManager = new ActionManager(
@@ -234,8 +236,12 @@ class App extends React.Component<Props, AppState> {
   }
 
   public render() {
-    const { zenModeEnabled } = this.state;
-    const { width: canvasDOMWidth, height: canvasDOMHeight } = this.state;
+    const {
+      zenModeEnabled,
+      width: canvasDOMWidth,
+      height: canvasDOMHeight,
+    } = this.state;
+    const { onUsernameChange } = this.props;
     const canvasScale = window.devicePixelRatio;
 
     const canvasWidth = canvasDOMWidth * canvasScale;
@@ -261,7 +267,7 @@ class App extends React.Component<Props, AppState> {
           onRoomCreate={this.openPortal}
           onRoomDestroy={this.closePortal}
           onUsernameChange={(username) => {
-            saveUsernameToLocalStorage(username);
+            onUsernameChange && onUsernameChange(username);
             this.setState({
               username,
             });
@@ -1195,16 +1201,6 @@ class App extends React.Component<Props, AppState> {
       cursorY = event.y - this.parentDOMTop;
     },
   );
-
-  restoreUserName() {
-    const username = restoreUsernameFromLocalStorage();
-
-    if (username !== null) {
-      this.setState({
-        username,
-      });
-    }
-  }
 
   // Input handling
 
