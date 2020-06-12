@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import * as Sentry from "@sentry/browser";
 import * as SentryIntegrations from "@sentry/integrations";
@@ -56,6 +56,53 @@ Sentry.init({
   ],
 });
 
+function ExcalidrawApp() {
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  const onResize = () => {
+    setDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+
+  const saveDebounced = debounce((elements, state) => {
+    saveToLocalStorage(elements, state);
+  }, 300);
+
+  const onBlur = (elements: readonly ExcalidrawElement[], state: AppState) => {
+    saveDebounced(elements, state);
+    saveDebounced.flush();
+  };
+
+  const onUsernameChange = (username: string) => {
+    saveUsernameToLocalStorage(username);
+  };
+
+  const initialData = restoreFromLocalStorage();
+  const username = restoreUsernameFromLocalStorage();
+  const user = { name: username };
+  const { width, height } = dimensions;
+  return (
+    <TopErrorBoundary>
+      <IsMobileProvider>
+        <App
+          width={width}
+          height={height}
+          onChange={saveDebounced}
+          onBlur={onBlur}
+          initialData={initialData}
+          user={user}
+          onUsernameChange={onUsernameChange}
+          onResize={onResize}
+        />
+      </IsMobileProvider>
+    </TopErrorBoundary>
+  );
+}
 // Block pinch-zooming on iOS outside of the content area
 document.addEventListener(
   "touchmove",
@@ -70,36 +117,7 @@ document.addEventListener(
 
 const rootElement = document.getElementById("root");
 
-const saveDebounced = debounce((elements, state) => {
-  saveToLocalStorage(elements, state);
-}, 300);
-
-const onBlur = (elements: readonly ExcalidrawElement[], state: AppState) => {
-  saveDebounced(elements, state);
-  saveDebounced.flush();
-};
-
-const onUsernameChange = (username: string) => {
-  saveUsernameToLocalStorage(username);
-};
-
-const initialData = restoreFromLocalStorage();
-const username = restoreUsernameFromLocalStorage();
-const user = { name: username };
-ReactDOM.render(
-  <TopErrorBoundary>
-    <IsMobileProvider>
-      <App
-        onChange={saveDebounced}
-        onBlur={onBlur}
-        initialData={initialData}
-        user={user}
-        onUsernameChange={onUsernameChange}
-      />
-    </IsMobileProvider>
-  </TopErrorBoundary>,
-  rootElement,
-);
+ReactDOM.render(<ExcalidrawApp />, rootElement);
 
 registerServiceWorker({
   onUpdate: (registration) => {

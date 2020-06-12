@@ -3,7 +3,7 @@ import React from "react";
 import rough from "roughjs/bin/rough";
 import { RoughCanvas } from "roughjs/bin/canvas";
 import { simplify, Point } from "points-on-curve";
-import { FlooredNumber, SocketUpdateData } from "../types";
+import { ExcalidrawProps, FlooredNumber, SocketUpdateData } from "../types";
 
 import {
   newElement,
@@ -166,21 +166,7 @@ const gesture: Gesture = {
   initialScale: null,
 };
 
-interface Props {
-  width: number;
-  height: number;
-  zenModeEnabled: boolean;
-  viewBackgroundColor: string;
-  onChange?: Function;
-  onBlur?: Function;
-  initialData: readonly ExcalidrawElement[];
-  user: {
-    name?: string | null | undefined;
-  };
-  onUsernameChange?: (username: string) => void;
-}
-
-class App extends React.Component<Props, AppState> {
+class App extends React.Component<ExcalidrawProps, AppState> {
   canvas: HTMLCanvasElement | null = null;
   rc: RoughCanvas | null = null;
   portal: Portal = new Portal(this);
@@ -198,7 +184,7 @@ class App extends React.Component<Props, AppState> {
   private parentDOMLeft: number;
   private parentDOMTop: number;
 
-  public static defaultProps: Partial<Props> = {
+  public static defaultProps: Partial<ExcalidrawProps> = {
     width: window.innerWidth,
     height: window.innerHeight,
     zenModeEnabled: false,
@@ -207,7 +193,7 @@ class App extends React.Component<Props, AppState> {
     user: {},
   };
 
-  constructor(props: Props) {
+  constructor(props: ExcalidrawProps) {
     super(props);
 
     const defaultAppState = getDefaultAppState();
@@ -456,6 +442,10 @@ class App extends React.Component<Props, AppState> {
   }
 
   private onResize = withBatchedUpdates(() => {
+    const { onResize } = this.props;
+    if (onResize) {
+      onResize();
+    }
     globalSceneState
       .getElementsIncludingDeleted()
       .forEach((element) => invalidateShapeForElement(element));
@@ -552,7 +542,7 @@ class App extends React.Component<Props, AppState> {
     this.broadcastScene(SCENE.UPDATE, /* syncAll */ true);
   }, SYNC_FULL_SCENE_INTERVAL_MS);
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: ExcalidrawProps) {
     const { width: prevWidth, height: prevHeight } = prevProps;
     const { width: currentWidth, height: currentHeight, onChange } = this.props;
     if (prevWidth !== currentWidth || prevHeight !== currentHeight) {
