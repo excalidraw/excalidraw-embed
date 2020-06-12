@@ -1,11 +1,9 @@
 {
   "name": "excalidraw",
-  "version": "0.0.0",
+  "version": "0.0.1-test1",
   "main": "dist/excalidraw.min.js",
   "files": [
-    "dist/excalidraw.min.js",
-    "dist/excalidraw.min.css",
-    "dist/socketIoClient.min.js"
+    "dist"
   ],
   "browserslist": {
     "production": [

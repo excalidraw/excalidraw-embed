@@ -321,9 +321,6 @@ class App extends React.Component<ExcalidrawProps, AppState> {
             editingElement || res.appState?.editingElement || null,
           isCollaborating: state.isCollaborating,
           collaborators: state.collaborators,
-          height: state.height,
-          width: state.width,
-          zenModeEnabled: state.zenModeEnabled,
         }),
         () => {
           if (res.syncHistory) {
@@ -385,6 +382,8 @@ class App extends React.Component<ExcalidrawProps, AppState> {
       } else {
         scene = await loadScene(null, initialData);
       }
+
+      scene = { ...scene, appState: { ...scene.appState, ...this.state } };
       if (scene) {
         this.syncActionResult(scene);
       }
