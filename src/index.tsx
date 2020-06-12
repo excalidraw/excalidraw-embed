@@ -14,6 +14,7 @@ import { loadFromBlob, saveToLocalStorage } from "./data";
 import { debounce } from "./utils";
 import { AppState } from "./types";
 import { ExcalidrawElement } from "./element/types";
+import { restoreFromLocalStorage } from "./data/localStorage";
 
 // On Apple mobile devices add the proprietary app icon and splashscreen markup.
 // No one should have to do this manually, and eventually this annoyance will
@@ -74,10 +75,12 @@ const onBlur = (elements: readonly ExcalidrawElement[], state: AppState) => {
   saveDebounced.flush();
 };
 
+const initialData = restoreFromLocalStorage();
+
 ReactDOM.render(
   <TopErrorBoundary>
     <IsMobileProvider>
-      <App onChange={saveDebounced} onBlur={onBlur} />
+      <App onChange={saveDebounced} onBlur={onBlur} initialData={initialData} />
     </IsMobileProvider>
   </TopErrorBoundary>,
   rootElement,
