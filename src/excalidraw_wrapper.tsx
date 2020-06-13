@@ -12,14 +12,13 @@ const Excalidraw = (props: ExcalidrawProps) => {
   const {
     width,
     height,
-    zenModeEnabled,
-    viewBackgroundColor,
     onChange,
     onBlur,
     initialData,
     user,
     onUsernameChange,
     onResize,
+    options,
   } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
@@ -41,14 +40,13 @@ const Excalidraw = (props: ExcalidrawProps) => {
     <App
       width={width}
       height={height}
-      zenModeEnabled={zenModeEnabled}
-      viewBackgroundColor={viewBackgroundColor}
       onChange={onChange}
       onBlur={onBlur}
       initialData={initialData}
       user={user}
       onUsernameChange={onUsernameChange}
       onResize={onResize}
+      options={options}
     />
   );
 };
