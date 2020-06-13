@@ -1,6 +1,7 @@
-> Note: the repository is heavily work-in-progress and not suitable for use yet.
-
 ### Excalidraw
+
+===
+[![npm version](https://badge.fury.io/js/excalidraw.svg)](https://badge.fury.io/js/excalidraw)
 
 Excalidraw exported as a component to directly embed in your projects
 
@@ -59,6 +60,7 @@ export default function App() {
     });
   };
   const { width, height } = dimensions;
+  const options = { zenModeEnabled: true, viewBackgroundColor: "AFEEEE" };
   return (
     <div className="App">
       <Excalidraw
@@ -67,9 +69,8 @@ export default function App() {
         onResize={onResize}
         initialData={InitialData}
         onChange={onChange}
-        zenModeEnabled
-        viewBackgroundColor="#AFEEEE"
-        user={{ name: "Aakansha" }}
+        options={options}
+        user={{ name: "Excalidraw User" }}
         onUsernameChange={onUsernameChange}
       />
     </div>
@@ -77,16 +78,64 @@ export default function App() {
 }
 ```
 
+[![Edit compassionate-shape-f60f8](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/compassionate-shape-f60f8?fontsize=14&hidenavigation=1&theme=dark)
+
 ### Props
 
-| Name                | Type                                                                                                                                         | Default            | Description                                                                                                                                                                                        |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| width               | Number                                                                                                                                       | window.innerWidth  | The width of Excalidraw component                                                                                                                                                                  |
-| height              | Number                                                                                                                                       | window.innerHeight | The height of Excalidraw component                                                                                                                                                                 |
-| onResize            | Function                                                                                                                                     |                    | This callback will be called when window resizes. You might want to update width and height when app resizes. The width and height of App won't resize unless you send the update width and height |
-| initialData         | [ExcalidrawElement[]](https://github.com/excalidraw/excalidraw-embed/blob/58178c388ae577140a1c679b5733f33e3722498a/src/element/types.ts#L44) | []                 | The initial data with which app loads.                                                                                                                                                             |
-| onChange            | Function                                                                                                                                     |                    | This callback is triggered whenever the component updates due to any change. This callback will receive the excalidraw elements and the current app state.                                         |
-| zenModeEnabled      | boolean                                                                                                                                      | false              | To enable zenmode                                                                                                                                                                                  |
-| viewBackgroundColor | string                                                                                                                                       | #fff               | The background color of Excalidraw component                                                                                                                                                       |
-| user                | { name?: string }                                                                                                                            |                    | User details. The name refers to the name of the user to be shown                                                                                                                                  |
-| onUsernameChange    | Function                                                                                                                                     |                    | This callback is triggered whenever the username change. This callback receives the username.                                                                                                      |
+| Name                                  | Type                                                                                                                                         | Default                                                                           | Description                                                                                                                                                |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [width](#width)                       | Number                                                                                                                                       | window.innerWidth                                                                 | The width of Excalidraw component                                                                                                                          |
+| [height](#height)                     | Number                                                                                                                                       | window.innerHeight                                                                | The height of Excalidraw component                                                                                                                         |
+| [onResize](#onResize)                 | Function                                                                                                                                     |                                                                                   | This callback will be called when window resizes                                                                                                           |
+| [initialData](#initialData)           | [ExcalidrawElement[]](https://github.com/excalidraw/excalidraw-embed/blob/58178c388ae577140a1c679b5733f33e3722498a/src/element/types.ts#L44) | []                                                                                | The initial data with which app loads.                                                                                                                     |
+| [onChange](#onChange)                 | Function                                                                                                                                     |                                                                                   | This callback is triggered whenever the component updates due to any change. This callback will receive the excalidraw elements and the current app state. |
+| [options](#options)                   | Object                                                                                                                                       | Each option has a default value. See [options](#options) section for more details | Options to be passed to Excalidraw                                                                                                                         |
+| [user](#user)                         | { name?: string }                                                                                                                            |                                                                                   | User details. The name refers to the name of the user to be shown                                                                                          |
+| [onUsernameChange](#onUsernameChange) | Function                                                                                                                                     |                                                                                   | This callback is triggered whenever the username change. This callback receives the username.                                                              |
+
+<a name="width"><a/>
+This props defines the width of the Excalidraw component. Defaults to `window.innerWidth` if not passed.
+
+<a name="height"><a/>
+This props defines the height of the Excalidraw component. Defaults to `window.innerHeight` if not passed.
+
+<a name="onResize"><a/>
+If this callback is passed, it gets triggered when window resizes. Some calculations which you might want to do here is calculating width and height of Excalidraw and pass it. Incase the updated width and height is not passed, then it will not get updated.
+
+<a name="initialData"><a/>
+This helps to load Excalidraw with `initialData`. Defaults to `[]`.
+This should be array of [ExcalidrawElement[]](https://github.com/excalidraw/excalidraw-embed/blob/58178c388ae577140a1c679b5733f33e3722498a/src/element/types.ts#L44). You might want to use this if you are using some backend to store the excalidraw elements data and want to preload excalidraw with that data.
+
+<a name="onChange"><a/>
+Every time component updates, this callback if passed will get triggered and has the below signature.
+
+```javascript
+onChange(ExcalidrawElement[], AppState)
+```
+
+Here you can try saving the data to your backend or local storage for example.
+
+<a name="options"><a/>
+These contains the options object with which you can control the initial rendering of Excalidraw.
+Currently it only contains the below keys, more to be added in future.
+
+| Name                | type    | default | Description                        |
+| ------------------- | ------- | ------- | ---------------------------------- |
+| zenModeEnabled      | boolean | false   | Decides whether to enable zen mode |
+| viewBackgroundColor | string  | #fff    | The background color of Excalidraw |
+
+Here is how you use it
+
+```javascript
+{ zenModeEnabled: true, viewBackgroundColor: "AFEEEE" }
+```
+
+<a name="user"><a/>
+This is the user name which shows during collaboration. Defaults to `{name: ''}`. This is Object as later more attributes like user cursor colors can also be added.
+
+<a name="onUserameChange"><a/>
+This callback if passed gets triggered whenever username changes and has the below signature
+
+```javascript
+onUserNameChange(username);
+```
