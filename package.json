@@ -1,11 +1,20 @@
 {
   "name": "excalidraw",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "main": "dist/excalidraw.min.js",
   "files": [
     "dist/excalidraw.min.js",
     "dist/excalidraw.min.css",
     "dist/socketIoClient.min.js"
+  ],
+  "description": "Excalidraw exported as a component to directly embed in your projects",
+  "license": "MIT",
+  "keywords": [
+    "excalidraw",
+    "excalidraw-embed",
+    "react",
+    "npm",
+    "npm excalidraw"
   ],
   "browserslist": {
     "production": [
@@ -85,7 +94,8 @@
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11"
   },
-  "homepage": ".",
+  "homepage": "https://github.com/excalidraw/excalidraw-embed#excalidraw",
+  "bugs": "https://github.com/excalidraw/excalidraw-embed/issues",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -96,6 +106,7 @@
       "node_modules/(?!(roughjs|points-on-curve|path-data-parser|points-on-path|browser-nativefs)/)"
     ]
   },
+  "repository": "https://github.com/excalidraw/excalidraw-embed",
   "scripts": {
     "build-node": "node ./scripts/build-node.js",
     "build:app": "REACT_APP_INCLUDE_GTAG=true REACT_APP_GIT_SHA=$NOW_GITHUB_COMMIT_SHA react-scripts build",
