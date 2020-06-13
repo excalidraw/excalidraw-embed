@@ -1,6 +1,6 @@
 ### Excalidraw
 
-[![npm version](https://badge.fury.io/js/excalidraw.svg)](https://badge.fury.io/js/excalidraw)
+![npm](https://img.shields.io/npm/v/excalidraw)
 ![npm](https://img.shields.io/npm/dw/excalidraw)
 
 Excalidraw exported as a component to directly embed in your projects
