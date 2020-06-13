@@ -113,8 +113,6 @@ export type LibraryItems = readonly NonDeleted<ExcalidrawElement>[][];
 export interface ExcalidrawProps {
   width: number;
   height: number;
-  zenModeEnabled: boolean;
-  viewBackgroundColor: string;
   onChange?: Function;
   onBlur?: Function;
   initialData: readonly ExcalidrawElement[];
@@ -122,4 +120,8 @@ export interface ExcalidrawProps {
     name?: string | null | undefined;
   };
   onUsernameChange?: (username: string) => void;
+  options: {
+    zenModeEnabled: boolean;
+    viewBackgroundColor: string;
+  };
 }

@@ -245,8 +245,10 @@ class App extends React.Component<ExcalidrawProps, AppState> {
   public static defaultProps: Partial<ExcalidrawProps> = {
     width: window.innerWidth,
     height: window.innerHeight,
-    zenModeEnabled: false,
-    viewBackgroundColor: oc.white,
+    options: {
+      zenModeEnabled: false,
+      viewBackgroundColor: oc.white,
+    },
     initialData: [],
     user: {},
   };
@@ -254,8 +256,12 @@ class App extends React.Component<ExcalidrawProps, AppState> {
   constructor(props: ExcalidrawProps) {
     super(props);
     const defaultAppState = getDefaultAppState();
-
-    const { width, height, zenModeEnabled, viewBackgroundColor, user } = props;
+    const {
+      width,
+      height,
+      options: { zenModeEnabled, viewBackgroundColor },
+      user,
+    } = props;
     this.state = {
       ...defaultAppState,
       isLoading: true,
@@ -392,6 +398,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
             offsetTop: state.offsetTop,
             offsetLeft: state.offsetLeft,
             zenModeEnabled: state.zenModeEnabled,
+            viewBackgroundColor: state.viewBackgroundColor,
           }),
           () => {
             if (actionResult.syncHistory) {
