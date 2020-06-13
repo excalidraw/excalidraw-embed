@@ -6,33 +6,18 @@ import "../public/fonts.css";
 import "../public/app.css";
 import "./css/styles.scss";
 
-import { ExcalidrawElement } from "./element/types";
+import { ExcalidrawProps } from "./types";
 
-type Props = {
-  width?: number;
-  height?: number;
-  zenModeEnabled?: boolean;
-  viewBackgroundColor?: string;
-  onChange?: Function;
-  onBlur?: Function;
-  initialData?: readonly ExcalidrawElement[];
-  user: {
-    name?: string | null | undefined;
-  };
-  onUsernameChange?: (username: string) => void;
-};
-
-const Excalidraw = (props: Props) => {
+const Excalidraw = (props: ExcalidrawProps) => {
   const {
     width,
     height,
-    zenModeEnabled,
-    viewBackgroundColor,
     onChange,
     onBlur,
     initialData,
     user,
     onUsernameChange,
+    options,
   } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
@@ -54,13 +39,12 @@ const Excalidraw = (props: Props) => {
     <App
       width={width}
       height={height}
-      zenModeEnabled={zenModeEnabled}
-      viewBackgroundColor={viewBackgroundColor}
       onChange={onChange}
       onBlur={onBlur}
       initialData={initialData}
       user={user}
       onUsernameChange={onUsernameChange}
+      options={options}
     />
   );
 };

@@ -119,6 +119,7 @@ function ExcalidrawApp() {
   const username = restoreUsernameFromLocalStorage();
   const user = { name: username };
   const { width, height } = dimensions;
+  const options = { zenModeEnabled: true, viewBackgroundColor: "#AFEEEE" };
   return (
     <TopErrorBoundary>
       <IsMobileProvider>
@@ -131,6 +132,7 @@ function ExcalidrawApp() {
             initialData={initialData}
             user={user}
             onUsernameChange={onUsernameChange}
+            options={options}
           />
         </InitializeApp>
       </IsMobileProvider>
