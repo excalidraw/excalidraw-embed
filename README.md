@@ -116,7 +116,7 @@ If this callback is passed, it gets triggered when window resizes. Some calculat
 ##### initialData
 
 This helps to load Excalidraw with `initialData`. Defaults to `[]`.
-This should be array of [ExcalidrawElement[]](https://github.com/excalidraw/excalidraw-embed/blob/58178c388ae577140a1c679b5733f33e3722498a/src/element/types.ts#L44). You might want to use this if you are using some backend to store the excalidraw elements  and want to preload excalidraw with those elements.
+This should be array of [ExcalidrawElement[]](https://github.com/excalidraw/excalidraw-embed/blob/58178c388ae577140a1c679b5733f33e3722498a/src/element/types.ts#L44). You might want to use this if you are using some backend to store the excalidraw elements and want to preload excalidraw with those elements.
 
 <a name="onChange"><a/>
 
