@@ -106,8 +106,6 @@ export type SocketUpdateData = SocketUpdateDataSource[keyof SocketUpdateDataSour
 export interface ExcalidrawProps {
   width: number;
   height: number;
-  zenModeEnabled: boolean;
-  viewBackgroundColor: string;
   onChange?: Function;
   onBlur?: Function;
   initialData: readonly ExcalidrawElement[];
@@ -116,4 +114,8 @@ export interface ExcalidrawProps {
   };
   onUsernameChange?: (username: string) => void;
   onResize: () => void;
+  options: {
+    zenModeEnabled: boolean;
+    viewBackgroundColor: string;
+  };
 }
