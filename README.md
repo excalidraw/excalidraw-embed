@@ -94,25 +94,34 @@ export default function App() {
 | [onUsernameChange](#onUsernameChange) | Function                                                                                                                                     |                                                                                   | This callback is triggered whenever the username change. This callback receives the username.                                                              |
 
 <a name="width"><a/>
+
 ##### width
+
 This props defines the width of the Excalidraw component. Defaults to `window.innerWidth` if not passed.
 
 <a name="height"><a/>
+
 ##### height
 
 This props defines the height of the Excalidraw component. Defaults to `window.innerHeight` if not passed.
 
 <a name="onResize"><a/>
+
 ##### onResize
+
 If this callback is passed, it gets triggered when window resizes. Some calculations which you might want to do here is calculating width and height of Excalidraw and pass it. Incase the updated width and height is not passed, then it will not get updated.
 
 <a name="initialData"><a/>
-##### initialData  
+
+##### initialData
+
 This helps to load Excalidraw with `initialData`. Defaults to `[]`.
 This should be array of [ExcalidrawElement[]](https://github.com/excalidraw/excalidraw-embed/blob/58178c388ae577140a1c679b5733f33e3722498a/src/element/types.ts#L44). You might want to use this if you are using some backend to store the excalidraw elements data and want to preload excalidraw with that data.
 
 <a name="onChange"><a/>
-##### onChange  
+
+##### onChange
+
 Every time component updates, this callback if passed will get triggered and has the below signature.
 
 ```javascript
@@ -122,7 +131,9 @@ onChange(ExcalidrawElement[], AppState)
 Here you can try saving the data to your backend or local storage for example.
 
 <a name="options"><a/>
-##### options  
+
+##### options
+
 These contains the options object with which you can control the initial rendering of Excalidraw.
 Currently it only contains the below keys, more to be added in future.
 
@@ -138,11 +149,15 @@ Here is how you use it
 ```
 
 <a name="user"><a/>
-##### user  
+
+##### user
+
 This is the user name which shows during collaboration. Defaults to `{name: ''}`. This is Object as later more attributes like user cursor colors can also be added.
 
 <a name="onUserameChange"><a/>
-##### onUsernameChange  
+
+##### onUsernameChange
+
 This callback if passed gets triggered whenever username changes and has the below signature
 
 ```javascript
