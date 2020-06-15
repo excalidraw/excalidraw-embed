@@ -28,7 +28,7 @@ FG_Virgil.woff2
 
 ### Demo
 
-[Try here](https://codesandbox.io/s/compassionate-shape-f60f8)
+[Try here](https://codesandbox.io/s/excalidraw-embed-f60f8)
 
 ### Usage
 
@@ -78,7 +78,7 @@ export default function App() {
 }
 ```
 
-[![Edit compassionate-shape-f60f8](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/compassionate-shape-f60f8?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit excalidraw-embed](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/excalidraw-embed-f60f8?fontsize=14&hidenavigation=1&theme=dark)
 
 ### Props
 
