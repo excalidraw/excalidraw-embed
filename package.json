@@ -1,9 +1,18 @@
 {
   "name": "excalidraw",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "dist/excalidraw.min.js",
   "files": [
     "dist"
+  ],
+  "description": "Excalidraw exported as a component to directly embed in your projects",
+  "license": "MIT",
+  "keywords": [
+    "excalidraw",
+    "excalidraw-embed",
+    "react",
+    "npm",
+    "npm excalidraw"
   ],
   "browserslist": {
     "production": [
