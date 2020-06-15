@@ -92,7 +92,8 @@
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11"
   },
-  "homepage": ".",
+  "homepage": "https://github.com/excalidraw/excalidraw-embed#excalidraw",
+  "bugs": "https://github.com/excalidraw/excalidraw-embed/issues",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -103,6 +104,7 @@
       "node_modules/(?!(roughjs|points-on-curve|path-data-parser|points-on-path|browser-nativefs)/)"
     ]
   },
+  "repository": "https://github.com/excalidraw/excalidraw-embed",
   "scripts": {
     "build": "npm run build:app && npm run build:zip",
     "build-node": "node ./scripts/build-node.js",
