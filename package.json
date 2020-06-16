@@ -1,6 +1,6 @@
 {
   "name": "excalidraw",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/excalidraw.min.js",
   "files": [
     "dist/excalidraw.min.js",
@@ -94,7 +94,6 @@
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11"
   },
-  "homepage": "https://github.com/excalidraw/excalidraw-embed#excalidraw",
   "bugs": "https://github.com/excalidraw/excalidraw-embed/issues",
   "husky": {
     "hooks": {
