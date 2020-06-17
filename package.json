@@ -92,7 +92,6 @@
     "webpack": "4.42.0",
     "webpack-cli": "3.3.11"
   },
-  "homepage": "https://github.com/excalidraw/excalidraw-embed#excalidraw",
   "bugs": "https://github.com/excalidraw/excalidraw-embed/issues",
   "husky": {
     "hooks": {
