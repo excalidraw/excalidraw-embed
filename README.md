@@ -2,6 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/excalidraw)
 ![npm](https://img.shields.io/npm/dw/excalidraw)
+![npm](https://img.shields.io/npm/dt/excalidraw)
 
 Excalidraw exported as a component to directly embed in your projects
 
