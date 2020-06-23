@@ -1537,8 +1537,8 @@ class App extends React.Component<ExcalidrawProps, AppState> {
         window.devicePixelRatio,
       );
 
-      textX = centerElementXInViewport;
-      textY = centerElementYInViewport;
+      textX = centerElementXInViewport + this.parentDOMLeft;
+      textY = centerElementYInViewport + this.parentDOMTop;
 
       // x and y will change after calling newTextElement function
       mutateElement(element, {
