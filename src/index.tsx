@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import * as Sentry from "@sentry/browser";
 import * as SentryIntegrations from "@sentry/integrations";
@@ -71,6 +71,12 @@ function ExcalidrawApp() {
     });
   };
 
+  useEffect(() => {
+    window.addEventListener("resize", onResize);
+
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const saveDebounced = debounce((elements, state) => {
     saveToLocalStorage(elements, state);
   }, 300);
@@ -99,7 +105,6 @@ function ExcalidrawApp() {
           initialData={initialData}
           user={user}
           onUsernameChange={onUsernameChange}
-          onResize={onResize}
         />
       </IsMobileProvider>
     </TopErrorBoundary>

@@ -113,7 +113,6 @@ export interface ExcalidrawProps {
     name?: string | null | undefined;
   };
   onUsernameChange?: (username: string) => void;
-  onResize: () => void;
   options: {
     zenModeEnabled: boolean;
     viewBackgroundColor: string;
