@@ -17,7 +17,6 @@ const Excalidraw = (props: ExcalidrawProps) => {
     initialData,
     user,
     onUsernameChange,
-    onResize,
     options,
   } = props;
   useEffect(() => {
@@ -45,7 +44,6 @@ const Excalidraw = (props: ExcalidrawProps) => {
       initialData={initialData}
       user={user}
       onUsernameChange={onUsernameChange}
-      onResize={onResize}
       options={options}
     />
   );

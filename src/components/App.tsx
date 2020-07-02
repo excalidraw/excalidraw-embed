@@ -448,10 +448,6 @@ class App extends React.Component<ExcalidrawProps, AppState> {
   }
 
   private onResize = withBatchedUpdates(() => {
-    const { onResize } = this.props;
-    if (onResize) {
-      onResize();
-    }
     globalSceneState
       .getElementsIncludingDeleted()
       .forEach((element) => invalidateShapeForElement(element));
