@@ -117,4 +117,5 @@ export interface ExcalidrawProps {
   viewBackgroundColor: string;
   onChange?: Function;
   onBlur?: Function;
+  initialData: readonly ExcalidrawElement[];
 }
