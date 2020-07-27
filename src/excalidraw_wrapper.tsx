@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 
+import { InitializeApp } from "./components/InitializeApp";
 import App from "./components/App";
 
 import "../public/fonts.css";
@@ -36,16 +37,18 @@ const Excalidraw = (props: ExcalidrawProps) => {
   }, []);
 
   return (
-    <App
-      width={width}
-      height={height}
-      onChange={onChange}
-      onBlur={onBlur}
-      initialData={initialData}
-      user={user}
-      onUsernameChange={onUsernameChange}
-      options={options}
-    />
+    <InitializeApp>
+      <App
+        width={width}
+        height={height}
+        onChange={onChange}
+        onBlur={onBlur}
+        initialData={initialData}
+        user={user}
+        onUsernameChange={onUsernameChange}
+        options={options}
+      />
+    </InitializeApp>
   );
 };
 export default Excalidraw;
