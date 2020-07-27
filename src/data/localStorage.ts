@@ -1,6 +1,6 @@
 import { ExcalidrawElement } from "../element/types";
 import { AppState, LibraryItems } from "../types";
-import { clearAppStateForLocalStorage, getDefaultAppState } from "../appState";
+import { clearAppStateForLocalStorage } from "../appState";
 import { restore } from "./restore";
 
 const LOCAL_STORAGE_KEY = "excalidraw";
@@ -117,15 +117,15 @@ export const restoreFromLocalStorage = () => {
     }
   }
 
-  let appState = null;
+  //let appState = null;
   if (savedState) {
     try {
-      appState = {
-        ...getDefaultAppState(),
-        ...clearAppStateForLocalStorage(
-          JSON.parse(savedState) as Partial<AppState>,
-        ),
-      };
+      // appState = {
+      //   ...getDefaultAppState(),
+      //   ...clearAppStateForLocalStorage(
+      //     JSON.parse(savedState) as Partial<AppState>,
+      //   ),
+      // };
     } catch (error) {
       console.error(error);
       // Do nothing because appState is already null
