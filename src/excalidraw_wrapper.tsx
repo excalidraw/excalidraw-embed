@@ -6,6 +6,8 @@ import "../public/fonts.css";
 import "../public/app.css";
 import "./css/styles.scss";
 
+import { ExcalidrawElement } from "./element/types";
+
 type Props = {
   width?: number;
   height?: number;
@@ -13,6 +15,7 @@ type Props = {
   viewBackgroundColor?: string;
   onChange?: Function;
   onBlur?: Function;
+  initialData?: readonly ExcalidrawElement[];
 };
 
 const Excalidraw = (props: Props) => {
@@ -23,6 +26,7 @@ const Excalidraw = (props: Props) => {
     viewBackgroundColor,
     onChange,
     onBlur,
+    initialData,
   } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
@@ -48,6 +52,7 @@ const Excalidraw = (props: Props) => {
       viewBackgroundColor={viewBackgroundColor}
       onChange={onChange}
       onBlur={onBlur}
+      initialData={initialData}
     />
   );
 };

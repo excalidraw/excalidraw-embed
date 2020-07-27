@@ -15,6 +15,7 @@ import { loadFromBlob, saveToLocalStorage } from "./data";
 import { debounce } from "./utils";
 import { AppState } from "./types";
 import { ExcalidrawElement } from "./element/types";
+import { restoreFromLocalStorage } from "./data/localStorage";
 
 // On Apple mobile devices add the proprietary app icon and splashscreen markup.
 // No one should have to do this manually, and eventually this annoyance will
@@ -105,7 +106,7 @@ function ExcalidrawApp() {
 
     return () => window.removeEventListener("resize", onResize);
   }, []);
-
+  const initialData = restoreFromLocalStorage();
   const { width, height } = dimensions;
   return (
     <TopErrorBoundary>
@@ -116,6 +117,7 @@ function ExcalidrawApp() {
             height={height}
             onChange={saveDebounced}
             onBlur={onBlur}
+            initialData={initialData}
           />
         </InitializeApp>
       </IsMobileProvider>
