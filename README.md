@@ -1,7 +1,6 @@
 ### Excalidraw
 
 ![npm](https://img.shields.io/npm/v/excalidraw)
-![npm](https://img.shields.io/npm/dw/excalidraw)
 ![npm](https://img.shields.io/npm/dt/excalidraw)
 
 Excalidraw exported as a component to directly embed in your projects
@@ -60,6 +59,13 @@ export default function App() {
       height: window.innerHeight,
     });
   };
+
+  useEffect(() => {
+    window.addEventListener("resize", onResize);
+
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const { width, height } = dimensions;
   const options = { zenModeEnabled: true, viewBackgroundColor: "#AFEEEE" };
   return (
@@ -67,7 +73,6 @@ export default function App() {
       <Excalidraw
         width={width}
         height={height}
-        onResize={onResize}
         initialData={InitialData}
         onChange={onChange}
         options={options}
