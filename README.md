@@ -92,7 +92,6 @@ export default function App() {
 | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [width](#width)                       | Number                                                                                                                                       | window.innerWidth                                                                 | The width of Excalidraw component                                                                                                                          |
 | [height](#height)                     | Number                                                                                                                                       | window.innerHeight                                                                | The height of Excalidraw component                                                                                                                         |
-| [onResize](#onResize)                 | Function                                                                                                                                     |                                                                                   | This callback will be called when window resizes                                                                                                           |
 | [initialData](#initialData)           | [ExcalidrawElement[]](https://github.com/excalidraw/excalidraw-embed/blob/58178c388ae577140a1c679b5733f33e3722498a/src/element/types.ts#L44) | []                                                                                | The initial data with which app loads.                                                                                                                     |
 | [onChange](#onChange)                 | Function                                                                                                                                     |                                                                                   | This callback is triggered whenever the component updates due to any change. This callback will receive the excalidraw elements and the current app state. |
 | [options](#options)                   | Object                                                                                                                                       | Each option has a default value. See [options](#options) section for more details | Options to be passed to Excalidraw                                                                                                                         |
@@ -110,12 +109,6 @@ This props defines the width of the Excalidraw component. Defaults to `window.in
 ##### height
 
 This props defines the height of the Excalidraw component. Defaults to `window.innerHeight` if not passed.
-
-<a name="onResize"><a/>
-
-##### onResize
-
-If this callback is passed, it gets triggered when window resizes. Some calculations which you might want to do here is calculating width and height of Excalidraw and pass it. Incase the updated width and height is not passed, then it will not get updated.
 
 <a name="initialData"><a/>
 
