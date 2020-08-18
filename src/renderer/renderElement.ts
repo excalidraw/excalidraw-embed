@@ -104,6 +104,20 @@ const drawElementOnCanvas = (
       });
       break;
     }
+    case "image": {
+      const img = new Image();
+      img.onload = () => {
+        context.drawImage(
+          img,
+          20 /* hardcoded for the selection box*/,
+          20,
+          element.width * 2,
+          element.height * 2,
+        );
+      };
+      img.src = element.src;
+      break;
+    }
     default: {
       if (isTextElement(element)) {
         const rtl = isRTL(element.text);
@@ -312,7 +326,8 @@ const generateElementShape = (
         }
         break;
       }
-      case "text": {
+      case "text":
+      case "image": {
         // just to ensure we don't regenerate element.canvas on rerenders
         shape = [];
         break;
@@ -399,7 +414,8 @@ export const renderElement = (
     case "line":
     case "draw":
     case "arrow":
-    case "text": {
+    case "text":
+    case "image": {
       generateElementShape(element, generator);
       if (renderOptimizations) {
         const elementWithCanvas = generateElementWithCanvas(
@@ -495,6 +511,15 @@ export const renderElementToSvg = (
         group.appendChild(node);
       });
       svgRoot.appendChild(group);
+      break;
+    }
+    case "image": {
+      // @todo: set image position
+      const node = svgRoot.ownerDocument!.createElementNS(SVG_NS, "image");
+      node.setAttribute("src", element.src);
+      node.setAttribute("width", String(element.width));
+      node.setAttribute("height", String(element.height));
+      svgRoot.appendChild(node);
       break;
     }
     default: {

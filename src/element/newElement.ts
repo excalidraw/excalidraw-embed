@@ -1,5 +1,6 @@
 import {
   ExcalidrawElement,
+  ExcalidrawImageElement,
   ExcalidrawTextElement,
   ExcalidrawLinearElement,
   ExcalidrawGenericElement,
@@ -127,6 +128,15 @@ export const newTextElement = (
   );
   return textElement;
 };
+
+export function newImageElement(
+  opts: ElementConstructorOpts,
+): NonDeleted<ExcalidrawImageElement> {
+  return {
+    ..._newElementBase<ExcalidrawImageElement>("image", opts),
+    src: "https://via.placeholder.com/480?text=Image",
+  };
+}
 
 const getAdjustedDimensions = (
   element: ExcalidrawTextElement,

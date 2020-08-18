@@ -36,6 +36,12 @@ export type ExcalidrawGenericElement =
       type: "rectangle" | "diamond" | "ellipse";
     });
 
+export type ExcalidrawImageElement = _ExcalidrawElementBase &
+  Readonly<{
+    type: "image";
+    src: string;
+  }>;
+
 /**
  * ExcalidrawElement should be JSON serializable and (eventually) contain
  * no computed data. The list of all ExcalidrawElements should be shareable
@@ -44,7 +50,8 @@ export type ExcalidrawGenericElement =
 export type ExcalidrawElement =
   | ExcalidrawGenericElement
   | ExcalidrawTextElement
-  | ExcalidrawLinearElement;
+  | ExcalidrawLinearElement
+  | ExcalidrawImageElement;
 
 export type NonDeleted<TElement extends ExcalidrawElement> = TElement & {
   isDeleted: false;

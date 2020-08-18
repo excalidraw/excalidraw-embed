@@ -7,6 +7,7 @@ import { SocketUpdateData } from "../types";
 
 import {
   newElement,
+  newImageElement,
   newTextElement,
   duplicateElement,
   resizeTest,
@@ -583,6 +584,9 @@ class App extends React.Component<ExcalidrawProps, AppState> {
     this.addEventListeners();
     this.setState(this.getCanvasOffsets(), () => {
       this.initializeScene();
+      setTimeout(() => {
+        this.forceUpdate();
+      }, 2000);
     });
   }
 
@@ -1417,7 +1421,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
       return;
     }
 
-    if (event.code === "Digit9") {
+    if (event.code === "Digit0") {
       this.setState({ isLibraryOpen: !this.state.isLibraryOpen });
     }
 
@@ -2100,6 +2104,36 @@ class App extends React.Component<ExcalidrawProps, AppState> {
         this.state.elementType,
         pointerDownState,
       );
+    } else if (this.state.elementType === "image") {
+      const [gridX, gridY] = getGridPoint(
+        pointerDownState.origin.x,
+        pointerDownState.origin.y,
+        this.state.gridSize,
+      );
+      const element = newImageElement({
+        x: gridX,
+        y: gridY,
+        strokeColor: this.state.currentItemStrokeColor,
+        backgroundColor: this.state.currentItemBackgroundColor,
+        fillStyle: this.state.currentItemFillStyle,
+        strokeWidth: this.state.currentItemStrokeWidth,
+        strokeStyle: this.state.currentItemStrokeStyle,
+        roughness: this.state.currentItemRoughness,
+        opacity: this.state.currentItemOpacity,
+      });
+      this.setState({
+        selectedElementIds: {
+          [element.id]: true,
+        },
+      });
+      this.scene.replaceAllElements([
+        ...this.scene.getElementsIncludingDeleted(),
+        element,
+      ]);
+      this.setState({
+        draggingElement: element,
+        editingElement: element,
+      });
     } else {
       this.createGenericElementOnPointerDown(
         this.state.elementType,
@@ -3013,6 +3047,20 @@ class App extends React.Component<ExcalidrawProps, AppState> {
         EVENT.POINTER_UP,
         pointerDownState.eventListeners.onUp!,
       );
+
+      if (draggingElement?.type === "image") {
+        const src = prompt("Input image URL");
+        if (src) {
+          mutateElement(draggingElement, {
+            src,
+          });
+          // @todo: force update to rerender the images
+          setTimeout(() => {
+            this.forceUpdate();
+          }, 2000);
+        }
+        return;
+      }
 
       if (draggingElement?.type === "draw") {
         this.actionManager.executeAction(actionFinalize);
