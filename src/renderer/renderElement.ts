@@ -74,7 +74,8 @@ const generateElementCanvas = (
   context.scale(window.devicePixelRatio * zoom, window.devicePixelRatio * zoom);
 
   const rc = rough.canvas(canvas);
-  drawElementOnCanvas(element, rc, context);
+
+  drawElementOnCanvas(element, rc, context, zoom);
   context.translate(-CANVAS_PADDING, -CANVAS_PADDING);
   context.scale(
     1 / (window.devicePixelRatio * zoom),
@@ -87,6 +88,7 @@ const drawElementOnCanvas = (
   element: NonDeletedExcalidrawElement,
   rc: RoughCanvas,
   context: CanvasRenderingContext2D,
+  zoom: number,
 ) => {
   context.globalAlpha = element.opacity / 100;
   switch (element.type) {
@@ -107,12 +109,15 @@ const drawElementOnCanvas = (
     case "image": {
       const img = new Image();
       img.onload = () => {
+        const scale = window.devicePixelRatio * zoom;
+        const width = scale * element.width;
+        const height = scale * element.height;
         context.drawImage(
           img,
-          20 /* hardcoded for the selection box*/,
-          20,
-          element.width * 2,
-          element.height * 2,
+          scale * 20 /* hardcoded for the selection box*/,
+          scale * 20,
+          width,
+          height,
         );
       };
       img.src = element.src;
@@ -432,7 +437,7 @@ export const renderElement = (
         context.translate(cx, cy);
         context.rotate(element.angle);
         context.translate(-shiftX, -shiftY);
-        drawElementOnCanvas(element, rc, context);
+        drawElementOnCanvas(element, rc, context, 1);
         context.translate(shiftX, shiftY);
         context.rotate(-element.angle);
         context.translate(-cx, -cy);
