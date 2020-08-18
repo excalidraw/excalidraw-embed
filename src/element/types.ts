@@ -40,6 +40,7 @@ export type ExcalidrawImageElement = _ExcalidrawElementBase &
   Readonly<{
     type: "image";
     src: string;
+    onImageLoad: () => void;
   }>;
 
 /**

@@ -60,6 +60,7 @@ function migrateElementWithProperties<T extends ExcalidrawElement>(
 
 const migrateElement = (
   element: Exclude<ExcalidrawElement, ExcalidrawSelectionElement>,
+  forceUpdate?: () => void,
 ): typeof element => {
   switch (element.type) {
     case "text":
@@ -105,6 +106,7 @@ const migrateElement = (
     case "image":
       return migrateElementWithProperties(element, {
         src: element.src,
+        onImageLoad: forceUpdate || (() => {}),
       });
 
     // don't use default case so as to catch a missing an element type case
@@ -116,12 +118,13 @@ const migrateElement = (
 export const restore = (
   savedElements: readonly ExcalidrawElement[],
   savedState: MarkOptional<AppState, "offsetTop" | "offsetLeft"> | null,
+  forceUpdate?: () => void,
 ): DataState => {
   const elements = savedElements.reduce((elements, element) => {
     // filtering out selection, which is legacy, no longer kept in elements,
     //  and causing issues if retained
     if (element.type !== "selection" && !isInvisiblySmallElement(element)) {
-      const migratedElement = migrateElement(element);
+      const migratedElement = migrateElement(element, forceUpdate);
       if (migratedElement) {
         elements.push(migratedElement);
       }

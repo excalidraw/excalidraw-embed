@@ -131,10 +131,12 @@ export const newTextElement = (
 
 export function newImageElement(
   opts: ElementConstructorOpts,
+  onImageLoad: () => void,
 ): NonDeleted<ExcalidrawImageElement> {
   return {
     ..._newElementBase<ExcalidrawImageElement>("image", opts),
     src: "https://via.placeholder.com/480?text=Image",
+    onImageLoad: onImageLoad,
   };
 }
 

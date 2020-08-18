@@ -367,6 +367,7 @@ export const loadScene = async (
   id: string | null,
   initialData: readonly ExcalidrawElement[],
   privateKey?: string,
+  forceUpdate?: () => void,
 ) => {
   let data;
   if (id != null) {
@@ -374,7 +375,7 @@ export const loadScene = async (
     // extra care not to leak it
     data = await importFromBackend(id, privateKey);
   } else {
-    data = restore(initialData, getDefaultAppState());
+    data = restore(initialData, getDefaultAppState(), forceUpdate);
   }
 
   return {

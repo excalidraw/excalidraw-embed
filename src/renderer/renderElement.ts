@@ -119,6 +119,7 @@ const drawElementOnCanvas = (
           width,
           height,
         );
+        element.onImageLoad?.();
       };
       img.src = element.src;
       break;

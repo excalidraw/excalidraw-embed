@@ -495,7 +495,10 @@ class App extends React.Component<ExcalidrawProps, AppState> {
 
     const { initialData } = this.props;
 
-    let scene = await loadScene(null, initialData);
+    let scene = await loadScene(null, initialData, undefined, () =>
+      // force rerender. can't use this.forceUpdate
+      this.setState({ ...this.state }),
+    );
 
     let isCollaborationScene = !!getCollaborationLinkData(window.location.href);
     const isExternalScene = !!(id || jsonMatch || isCollaborationScene);
@@ -584,9 +587,6 @@ class App extends React.Component<ExcalidrawProps, AppState> {
     this.addEventListeners();
     this.setState(this.getCanvasOffsets(), () => {
       this.initializeScene();
-      setTimeout(() => {
-        this.forceUpdate();
-      }, 2000);
     });
   }
 
@@ -2110,17 +2110,22 @@ class App extends React.Component<ExcalidrawProps, AppState> {
         pointerDownState.origin.y,
         this.state.gridSize,
       );
-      const element = newImageElement({
-        x: gridX,
-        y: gridY,
-        strokeColor: this.state.currentItemStrokeColor,
-        backgroundColor: this.state.currentItemBackgroundColor,
-        fillStyle: this.state.currentItemFillStyle,
-        strokeWidth: this.state.currentItemStrokeWidth,
-        strokeStyle: this.state.currentItemStrokeStyle,
-        roughness: this.state.currentItemRoughness,
-        opacity: this.state.currentItemOpacity,
-      });
+      const element = newImageElement(
+        {
+          x: gridX,
+          y: gridY,
+          strokeColor: this.state.currentItemStrokeColor,
+          backgroundColor: this.state.currentItemBackgroundColor,
+          fillStyle: this.state.currentItemFillStyle,
+          strokeWidth: this.state.currentItemStrokeWidth,
+          strokeStyle: this.state.currentItemStrokeStyle,
+          roughness: this.state.currentItemRoughness,
+          opacity: this.state.currentItemOpacity,
+        },
+        () => {
+          this.forceUpdate();
+        },
+      );
       this.setState({
         selectedElementIds: {
           [element.id]: true,
@@ -3053,11 +3058,10 @@ class App extends React.Component<ExcalidrawProps, AppState> {
         if (src) {
           mutateElement(draggingElement, {
             src,
+            onImageLoad: () => {
+              this.forceUpdate();
+            },
           });
-          // @todo: force update to rerender the images
-          setTimeout(() => {
-            this.forceUpdate();
-          }, 2000);
         }
         return;
       }
