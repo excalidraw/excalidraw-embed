@@ -822,8 +822,100 @@ class App extends React.Component<ExcalidrawProps, AppState> {
       this.queueBroadcastAllElements();
     }
 
+    if (
+      this.props.version &&
+      this.props.value &&
+      prevProps.version !== this.props.version
+    ) {
+      this.updateElements(this.props.value);
+    }
+
     history.record(this.state, this.scene.getElementsIncludingDeleted());
   }
+
+  private updateElements = (elements: readonly ExcalidrawElement[]) => {
+    // Perform reconciliation - in collaboration, if we encounter
+    // elements with more staler versions than ours, ignore them
+    // and keep ours.
+    if (
+      this.scene.getElementsIncludingDeleted() == null ||
+      this.scene.getElementsIncludingDeleted().length === 0
+    ) {
+      this.scene.replaceAllElements(elements);
+    } else {
+      // create a map of ids so we don't have to iterate
+      // over the array more than once.
+      const localElementMap = getElementMap(
+        this.scene.getElementsIncludingDeleted(),
+      );
+
+      // Reconcile
+      const newElements = elements
+        .reduce((elements, newEl) => {
+          // if the remote element references one that's currently
+          //  edited on local, skip it (it'll be added in the next
+          //  step)
+          if (
+            newEl.id === this.state.editingElement?.id ||
+            newEl.id === this.state.resizingElement?.id ||
+            newEl.id === this.state.draggingElement?.id
+          ) {
+            return elements;
+          }
+
+          let element = newEl;
+          if (newEl.type === "image") {
+            element = {
+              ...newEl,
+              onImageLoad: () => {
+                this.forceUpdate();
+              },
+            };
+          }
+
+          if (
+            localElementMap.hasOwnProperty(element.id) &&
+            localElementMap[element.id].version > element.version
+          ) {
+            elements.push(localElementMap[element.id]);
+            delete localElementMap[element.id];
+          } else if (
+            localElementMap.hasOwnProperty(element.id) &&
+            localElementMap[element.id].version === element.version &&
+            localElementMap[element.id].versionNonce !== element.versionNonce
+          ) {
+            // resolve conflicting edits deterministically by taking the one with the lowest versionNonce
+            if (
+              localElementMap[element.id].versionNonce < element.versionNonce
+            ) {
+              elements.push(localElementMap[element.id]);
+            } else {
+              // it should be highly unlikely that the two versionNonces are the same. if we are
+              // really worried about this, we can replace the versionNonce with the socket id.
+              elements.push(element);
+            }
+            delete localElementMap[element.id];
+          } else {
+            elements.push(element);
+            delete localElementMap[element.id];
+          }
+
+          return elements;
+        }, [] as Mutable<typeof elements>)
+        // add local elements that weren't deleted or on remote
+        .concat(...Object.values(localElementMap));
+
+      // Avoid broadcasting to the rest of the collaborators the scene
+      // we just received!
+      // Note: this needs to be set before replaceAllElements as it
+      // syncronously calls render.
+      this.lastBroadcastedOrReceivedSceneVersion = getDrawingVersion(
+        newElements,
+      );
+
+      this.scene.replaceAllElements(newElements);
+    }
+  };
 
   // Copy/paste
 

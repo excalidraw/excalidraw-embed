@@ -19,6 +19,8 @@ const Excalidraw = (props: ExcalidrawProps) => {
     user,
     onUsernameChange,
     options,
+    version,
+    value,
   } = props;
   useEffect(() => {
     const handleTouchMove = (event: TouchEvent) => {
@@ -47,6 +49,8 @@ const Excalidraw = (props: ExcalidrawProps) => {
         user={user}
         onUsernameChange={onUsernameChange}
         options={options}
+        version={version}
+        value={value}
       />
     </InitializeApp>
   );

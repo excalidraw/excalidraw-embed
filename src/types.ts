@@ -112,11 +112,13 @@ export type LibraryItem = NonDeleted<ExcalidrawElement>[];
 export type LibraryItems = readonly LibraryItem[];
 
 export interface ExcalidrawProps {
+  version?: string;
   width: number;
   height: number;
   onChange?: Function;
   onBlur?: Function;
   initialData: readonly ExcalidrawElement[];
+  value?: readonly ExcalidrawElement[]; // controlled elements
   user: {
     name?: string | null | undefined;
   };

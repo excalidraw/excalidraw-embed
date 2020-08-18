@@ -108,10 +108,10 @@ const drawElementOnCanvas = (
     }
     case "image": {
       const img = new Image();
+      const scale = window.devicePixelRatio * zoom;
+      const width = scale * element.width;
+      const height = scale * element.height;
       img.onload = () => {
-        const scale = window.devicePixelRatio * zoom;
-        const width = scale * element.width;
-        const height = scale * element.height;
         context.drawImage(
           img,
           scale * 20 /* hardcoded for the selection box*/,
@@ -122,6 +122,8 @@ const drawElementOnCanvas = (
         element.onImageLoad?.();
       };
       img.src = element.src;
+      img.width = width;
+      img.height = height;
       break;
     }
     default: {
