@@ -51,7 +51,7 @@ export const loadFromBlob = async (blob: any, appState?: AppState) => {
     throw new Error(t("alerts.couldNotLoadInvalidFile"));
   }
 
-  return restore(elements, _appState, () => {});
+  return restore(elements, _appState);
 };
 
 export const loadLibraryFromBlob = async (blob: any) => {

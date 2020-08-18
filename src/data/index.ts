@@ -244,7 +244,7 @@ export const importFromBackend = async (
     );
     if (!response.ok) {
       window.alert(t("alerts.importBackendFailed"));
-      return restore(elements, appState, () => {});
+      return restore(elements, appState);
     }
     let data;
     if (privateKey) {
@@ -275,7 +275,7 @@ export const importFromBackend = async (
     window.alert(t("alerts.importBackendFailed"));
     console.error(error);
   } finally {
-    return restore(elements, appState, () => {});
+    return restore(elements, appState);
   }
 };
 
@@ -367,7 +367,6 @@ export const loadScene = async (
   id: string | null,
   initialData: readonly ExcalidrawElement[],
   privateKey?: string,
-  forceUpdate?: () => void,
 ) => {
   let data;
   if (id != null) {
@@ -375,11 +374,7 @@ export const loadScene = async (
     // extra care not to leak it
     data = await importFromBackend(id, privateKey);
   } else {
-    data = restore(
-      initialData,
-      getDefaultAppState(),
-      forceUpdate || (() => {}),
-    );
+    data = restore(initialData, getDefaultAppState());
   }
 
   return {
