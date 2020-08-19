@@ -141,9 +141,9 @@ export const ShapesSwitcher = ({
       type="button"
       icon={LIBRARY_ICON}
       name="editor-library"
-      keyBindingLabel="9"
-      aria-keyshortcuts="9"
-      title={`${capitalizeString(t("toolBar.library"))} — 9`}
+      keyBindingLabel="0"
+      aria-keyshortcuts="0"
+      title={`${capitalizeString(t("toolBar.library"))} — 0`}
       aria-label={capitalizeString(t("toolBar.library"))}
       onClick={() => {
         setAppState({ isLibraryOpen: !isLibraryOpen });

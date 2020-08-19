@@ -111,6 +111,7 @@
   },
   "toolBar": {
     "selection": "Selection",
+    "image": "Image",
     "draw": "Free draw",
     "rectangle": "Rectangle",
     "diamond": "Diamond",

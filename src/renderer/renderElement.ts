@@ -74,7 +74,8 @@ const generateElementCanvas = (
   context.scale(window.devicePixelRatio * zoom, window.devicePixelRatio * zoom);
 
   const rc = rough.canvas(canvas);
-  drawElementOnCanvas(element, rc, context);
+
+  drawElementOnCanvas(element, rc, context, zoom);
   context.translate(-CANVAS_PADDING, -CANVAS_PADDING);
   context.scale(
     1 / (window.devicePixelRatio * zoom),
@@ -87,6 +88,7 @@ const drawElementOnCanvas = (
   element: NonDeletedExcalidrawElement,
   rc: RoughCanvas,
   context: CanvasRenderingContext2D,
+  zoom: number,
 ) => {
   context.globalAlpha = element.opacity / 100;
   switch (element.type) {
@@ -102,6 +104,26 @@ const drawElementOnCanvas = (
       (getShapeForElement(element) as Drawable[]).forEach((shape) => {
         rc.draw(shape);
       });
+      break;
+    }
+    case "image": {
+      const img = new Image();
+      const scale = window.devicePixelRatio * zoom;
+      const width = scale * element.width;
+      const height = scale * element.height;
+      img.onload = () => {
+        context.drawImage(
+          img,
+          scale * 20 /* hardcoded for the selection box*/,
+          scale * 20,
+          width,
+          height,
+        );
+        element.onImageLoad?.();
+      };
+      img.src = element.src;
+      img.width = width;
+      img.height = height;
       break;
     }
     default: {
@@ -312,7 +334,8 @@ const generateElementShape = (
         }
         break;
       }
-      case "text": {
+      case "text":
+      case "image": {
         // just to ensure we don't regenerate element.canvas on rerenders
         shape = [];
         break;
@@ -399,7 +422,8 @@ export const renderElement = (
     case "line":
     case "draw":
     case "arrow":
-    case "text": {
+    case "text":
+    case "image": {
       generateElementShape(element, generator);
       if (renderOptimizations) {
         const elementWithCanvas = generateElementWithCanvas(
@@ -416,7 +440,7 @@ export const renderElement = (
         context.translate(cx, cy);
         context.rotate(element.angle);
         context.translate(-shiftX, -shiftY);
-        drawElementOnCanvas(element, rc, context);
+        drawElementOnCanvas(element, rc, context, 1);
         context.translate(shiftX, shiftY);
         context.rotate(-element.angle);
         context.translate(-cx, -cy);
@@ -495,6 +519,15 @@ export const renderElementToSvg = (
         group.appendChild(node);
       });
       svgRoot.appendChild(group);
+      break;
+    }
+    case "image": {
+      // @todo: set image position
+      const node = svgRoot.ownerDocument!.createElementNS(SVG_NS, "image");
+      node.setAttribute("src", element.src);
+      node.setAttribute("width", String(element.width));
+      node.setAttribute("height", String(element.height));
+      svgRoot.appendChild(node);
       break;
     }
     default: {
