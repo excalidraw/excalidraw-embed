@@ -1,11 +1,9 @@
 {
   "name": "excalidraw",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "main": "dist/excalidraw.min.js",
   "files": [
-    "dist/excalidraw.min.js",
-    "dist/excalidraw.min.css",
-    "dist/socketIoClient.min.js"
+    "dist"
   ],
   "description": "Excalidraw exported as a component to directly embed in your projects",
   "license": "MIT",
