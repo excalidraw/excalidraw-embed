@@ -537,15 +537,7 @@ class App extends React.Component<ExcalidrawProps, AppState> {
       if (scene.appState) {
         scene.appState = {
           ...scene.appState,
-          ...calculateScrollCenter(
-            scene.elements,
-            {
-              ...scene.appState,
-              offsetTop: this.state.offsetTop,
-              offsetLeft: this.state.offsetLeft,
-            },
-            null,
-          ),
+          ...calculateScrollCenter(scene.elements, this.state, null),
         };
       }
       this.syncActionResult(scene);
