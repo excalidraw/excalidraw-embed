@@ -34,8 +34,8 @@
     ]
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "dependencies": {
     "browser-nativefs": "0.10.1",
@@ -63,8 +63,8 @@
     "@types/jest": "26.0.7",
     "@types/lodash.throttle": "4.1.6",
     "@types/nanoid": "2.1.0",
-    "@types/react": "16.9.43",
-    "@types/react-dom": "16.9.8",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@types/socket.io-client": "1.4.33",
     "asar": "3.0.3",
     "babel-loader": "8.1.0",
@@ -81,8 +81,8 @@
     "node-sass": "4.14.1",
     "pepjs": "0.5.2",
     "prettier": "2.0.5",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-scripts": "3.4.1",
     "rewire": "5.0.0",
     "sass-loader": "8.0.2",
