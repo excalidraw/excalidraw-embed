@@ -1,5 +1,3 @@
-import "./ToolIcon.scss";
-
 import React from "react";
 
 type ToolIconSize = "s" | "m";

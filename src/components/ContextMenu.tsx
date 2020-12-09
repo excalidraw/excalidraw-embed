@@ -2,8 +2,6 @@ import React from "react";
 import { Popover } from "./Popover";
 import { render, unmountComponentAtNode } from "react-dom";
 
-import "./ContextMenu.scss";
-
 type ContextMenuOption = {
   label: string;
   action(): void;

@@ -1,5 +1,3 @@
-import "./Stack.css";
-
 import React from "react";
 
 type StackProps = {

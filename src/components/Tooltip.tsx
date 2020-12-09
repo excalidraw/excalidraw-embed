@@ -1,5 +1,3 @@
-import "./Tooltip.scss";
-
 import React from "react";
 
 type TooltipProps = {

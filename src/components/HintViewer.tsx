@@ -3,7 +3,6 @@ import { t } from "../i18n";
 import { NonDeletedExcalidrawElement } from "../element/types";
 import { getSelectedElements } from "../scene";
 
-import "./HintViewer.scss";
 import { AppState } from "../types";
 import { isLinearElement } from "../element/typeChecks";
 import { getShortcutKey } from "../utils";

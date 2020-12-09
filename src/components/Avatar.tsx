@@ -1,5 +1,3 @@
-import "./Avatar.scss";
-
 import React from "react";
 
 type AvatarProps = {

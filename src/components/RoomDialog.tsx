@@ -4,7 +4,6 @@ import { t } from "../i18n";
 import useIsMobile from "../is-mobile";
 import { users, clipboard, start, stop } from "./icons";
 
-import "./RoomDialog.scss";
 import { copyTextToSystemClipboard } from "../clipboard";
 import { Dialog } from "./Dialog";
 import { AppState } from "../types";

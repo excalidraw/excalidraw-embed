@@ -6,8 +6,6 @@ import useIsMobile from "../is-mobile";
 import { back, close } from "./icons";
 import { KEYS } from "../keys";
 
-import "./Dialog.scss";
-
 export const Dialog = (props: {
   children: React.ReactNode;
   className?: string;

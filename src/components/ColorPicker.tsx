@@ -1,7 +1,5 @@
 import React from "react";
 import { Popover } from "./Popover";
-
-import "./ColorPicker.scss";
 import { KEYS } from "../keys";
 import { t, getLanguage } from "../i18n";
 import { isWritableElement } from "../utils";

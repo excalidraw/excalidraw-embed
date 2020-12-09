@@ -37,7 +37,6 @@ import { shield, exportFile, load } from "./icons";
 import { GitHubCorner } from "./GitHubCorner";
 import { Tooltip } from "./Tooltip";
 
-import "./LayerUI.scss";
 import { LibraryUnit } from "./LibraryUnit";
 import { loadLibrary, saveLibrary } from "../data/localStorage";
 import { ToolButton } from "./ToolButton";

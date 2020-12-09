@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { exportToSvg } from "../scene/export";
 import { close } from "../components/icons";
 
-import "./LibraryUnit.scss";
 import { t } from "../i18n";
 import useIsMobile from "../is-mobile";
 import { LibraryItem } from "../types";

@@ -1,5 +1,3 @@
-import "./TextInput.scss";
-
 import React, { Component } from "react";
 import { selectNode, removeSelection } from "../utils";
 

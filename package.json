@@ -1,7 +1,7 @@
 {
   "name": "excalidraw",
   "version": "0.6.2",
-  "main": "dist/excalidraw.min.js",
+  "main": "src/excalidraw_wrapper.tsx",
   "files": [
     "dist"
   ],

@@ -1,5 +1,3 @@
-import "./ExportDialog.scss";
-
 import React, { useState, useEffect, useRef } from "react";
 
 import { ToolButton } from "./ToolButton";

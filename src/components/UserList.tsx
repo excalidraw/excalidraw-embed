@@ -1,5 +1,3 @@
-import "./UserList.css";
-
 import React from "react";
 
 type UserListProps = {

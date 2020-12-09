@@ -1,5 +1,3 @@
-import "./Island.scss";
-
 import React from "react";
 
 type IslandProps = {
