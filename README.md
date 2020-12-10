@@ -1,3 +1,8 @@
+___
+
+**This library is deprecated.** Please use [@excalidraw/excalidraw](https://www.npmjs.com/package/@excalidraw/excalidraw).
+___
+
 ### Excalidraw
 
 ![npm](https://img.shields.io/npm/v/excalidraw)
